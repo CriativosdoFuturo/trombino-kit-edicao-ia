@@ -2,6 +2,29 @@
 
 **Criativos do Futuro** · Skills e motion graphics com HyperFrames.
 
+## Instalador do MCP do Premiere — Windows e Mac
+
+### [BAIXAR INSTALADOR ÚNICO DO PREMIERE MCP (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.0.0.zip)
+
+Este pacote foi preparado para alunos iniciantes. Ele detecta Windows ou macOS,
+usa uma versão fixa do MCP, instala um Node.js portátil validado, prepara o
+painel MCP Bridge, configura o Codex e executa o diagnóstico. A instalação comum
+não depende do registro npm.
+
+Depois de baixar e extrair o ZIP, abra a pasta no Codex e cole:
+
+> Leia o README.md e o AGENTS.md. Detecte meu sistema operacional e instale o
+> MCP do Adobe Premiere usando o instalador deste pacote. Continue até o
+> diagnóstico passar. Peça minha intervenção somente quando o sistema exigir
+> aprovação ou quando chegar aos dois passos manuais exibidos pelo instalador.
+> Não use APIs pagas e não altere nenhum projeto aberto no Premiere.
+
+Ao final, o aluno precisa apenas reiniciar Codex e Premiere, abrir **Janela >
+Extensões > MCP Bridge (CEP)** e clicar em **Start Bridge**. O pacote inclui
+instruções de suporte e recuperação via npm caso o caminho principal falhe.
+
+Integridade do download: [SHA-256](premiere-mcp-instalador-v1.0.0.sha256).
+
 ## Escolha uma edição
 
 ### [BAIXAR KIT ESSENCIAL (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/trombino-kit-edicao-ia.zip)
@@ -31,7 +54,7 @@ O download sozinho não instala o motor nem conecta o editor. Não é necessári
 - Kit Trombino: organiza o fluxo do curso e ajuda a descobrir o método de cada aluno.
 - MCP do editor: integração separada; instale apenas a necessária.
 
-O curso demonstra principalmente Premiere no Windows. [Premiere MCP](https://github.com/antipaster/Adobe-Premiere-Pro-MCP), [DaVinci MCP](https://github.com/samuelgursky/davinci-resolve-mcp) e [CapCut MCP](https://github.com/yabdulaziz2009-dev/capcut-mcp) têm requisitos e formas de funcionamento próprios. Não são instalados automaticamente por este kit.
+O curso demonstra principalmente Premiere no Windows. Use o [instalador único do Premiere MCP](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.0.0.zip) para Windows ou Mac. [DaVinci MCP](https://github.com/samuelgursky/davinci-resolve-mcp) e [CapCut MCP](https://github.com/yabdulaziz2009-dev/capcut-mcp) têm requisitos e formas de funcionamento próprios. Não são instalados automaticamente pelo kit de animação.
 
 Um vídeo renderizado não vira texto e keyframes nativos no editor. O código HyperFrames permanece editável; entrega nativa depende da integração e precisa ser verificada.
 
