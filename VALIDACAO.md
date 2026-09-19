@@ -25,3 +25,7 @@ Checagens desta revisão: sincronização das skills e estrutura aprovadas; 11 t
 ## Proteção de decupagem conectada
 
 Esta revisão adiciona separação entre instalação e edição, uma tarefa limpa para a primeira decupagem, transcrição única com idioma confirmado e planejamento completo antes da timeline. O modo econômico em lote é o padrão. A demonstração visual, que executa o plano em ordem sem reanalisar entre os cortes, só é usada quando o usuário pedir; antes de seguir, o Codex explica em linguagem simples que esse modo leva mais tempo e consome mais créditos. Também foram incluídos resultados compactos, repetição inteligente e proteção para projetos em pastas sincronizadas. O limite vale para a mesma ação pelo mesmo método; ele não encerra a tarefa inteira. As skills foram sincronizadas e os 11 testes existentes passaram. Esta revisão não executou uma sessão real do Premiere, DaVinci ou CapCut; a compatibilidade continua dependente da integração instalada.
+
+## J-cut e proteção fonética 2.1.2
+
+A skill agora distingue corte apertado de J-cut verdadeiro, exige antecipação real do áudio seguinte quando J-cut for solicitado e impede que cortes alinhados sejam descritos como J-cuts. O cortador de silêncios ganhou `--word-tail-pad`, com margem padrão de 160 ms depois do timestamp de cada palavra, além de revisão obrigatória por escuta para preservar fonemas finais. Um novo teste automatizado verifica essa margem. As duas edições passaram em 12 testes, sincronização das skills e checagem estrutural. Nenhuma sessão real de editor foi executada nesta revisão.

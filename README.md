@@ -61,6 +61,10 @@ As duas edições agora incluem `docs/DECUPAGEM-SEGURA.md`. O modo econômico em
 
 Quem já instalou o MCP do Premiere não precisa instalá-lo novamente. Baixe de novo a mesma edição do kit, extraia em uma pasta nova e abra essa nova pasta como projeto no Codex. O MCP permanece instalado no computador. Preserve a pasta anterior, projetos, mídias, configurações e arquivos `.env`; depois do teste da nova pasta, leve somente cópias dos projetos que deseja continuar.
 
+### J-cuts e finais de palavras
+
+A versão 2.1.2 diferencia corte apertado de J-cut verdadeiro. Na limpeza comum, o Codex remove pausas e respirações indesejadas sem cortar o fonema final; quando J-cut for solicitado, o áudio seguinte deve começar antes da troca de imagem. O cortador local preserva por padrão uma margem fonética de 160 ms após timestamps de palavras, e a revisão por escuta prevalece sobre esse valor. Isso protege finais de baixa energia, como o “s” de “professores”.
+
 ## Ferramentas e destino da entrega
 
 - [Codex](https://openai.com/pt-BR/codex/): recebe sua direção e trabalha com as ferramentas e arquivos disponíveis no ambiente local.
