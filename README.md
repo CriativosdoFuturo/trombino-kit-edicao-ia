@@ -55,7 +55,11 @@ Abra **Nova tarefa** no mesmo projeto e cole:
 
 > Use a skill trombino. Quero começar pela decupagem no modo econômico. Reutilize uma transcrição existente ou confirme o idioma antes de transcrever. Planeje todos os cortes antes de alterar a timeline, preserve a sequência original e aplique o plano em lote ou no menor número de lotes possível.
 
-As duas edições agora incluem `docs/DECUPAGEM-SEGURA.md`. O modo econômico em lote é o padrão; a demonstração visual só é usada quando o aluno pedir. Antes de seguir no modo visual, o Codex explica com palavras simples que a execução leva mais tempo e consome mais créditos. O guia também inclui limites de repetição, preferência pelo MCP do editor e interrupção da estratégia após duas tentativas sem mudança.
+As duas edições agora incluem `docs/DECUPAGEM-SEGURA.md`. O modo econômico em lote é o padrão; a demonstração visual só é usada quando o aluno pedir. Antes de seguir no modo visual, o Codex explica com palavras simples que a execução leva mais tempo e consome mais créditos. O guia também inclui repetição inteligente, preferência pelo MCP e cuidado com projetos em pastas sincronizadas. O limite vale para repetir a mesma ação pelo mesmo método: o Codex verifica o estado, troca de caminho e continua a edição quando isso for seguro.
+
+### Atualizar esta proteção sem reinstalar o MCP
+
+Quem já instalou o MCP do Premiere não precisa instalá-lo novamente. Baixe de novo a mesma edição do kit, extraia em uma pasta nova e abra essa nova pasta como projeto no Codex. O MCP permanece instalado no computador. Preserve a pasta anterior, projetos, mídias, configurações e arquivos `.env`; depois do teste da nova pasta, leve somente cópias dos projetos que deseja continuar.
 
 ## Ferramentas e destino da entrega
 
