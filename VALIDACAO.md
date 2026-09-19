@@ -15,3 +15,13 @@ Instalação em computador limpo, transcrição local de fala em português, ví
 ## Conteúdo do pacote
 
 O pacote exclui node_modules, ferramentas baixadas, arquivos .env, gravações pessoais, projetos de edição, renders, fontes particulares e perfis pessoais. Dependências são instaladas na máquina do aluno. Os exemplos de marca AIS e vídeos showcase da distribuição original foram omitidos; licenças e créditos foram preservados.
+
+## Edições 2.1
+
+Mudanças desta revisão: documentação de escolha, relatório local de hardware e catálogo opcional. Não há mudança no motor nem nos cards históricos. As novas referências não foram adaptadas nem renderizadas. A validação histórica abaixo/acima não se estende a elas. Computadores modestos ainda não foram certificados.
+
+Checagens desta revisão: sincronização das skills e estrutura aprovadas; 11 testes de scripts aprovados em cada edição; relatório local de hardware executado. Nenhum novo render de efeitos foi realizado nesta revisão.
+
+## Proteção de decupagem conectada
+
+Esta revisão adiciona separação entre instalação e edição, uma tarefa limpa para a primeira decupagem, transcrição única com idioma confirmado e planejamento completo antes da timeline. O modo econômico em lote é o padrão. A demonstração visual, que executa o plano em ordem sem reanalisar entre os cortes, só é usada quando o usuário pedir; antes de seguir, o Codex explica em linguagem simples que esse modo leva mais tempo e consome mais créditos. Também foram incluídos resultados compactos e o limite de duas tentativas sem mudança na interface. As skills foram sincronizadas e os 11 testes existentes passaram. Esta revisão não executou uma sessão real do Premiere, DaVinci ou CapCut; a compatibilidade continua dependente da integração instalada.

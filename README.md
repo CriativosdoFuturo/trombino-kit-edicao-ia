@@ -47,6 +47,16 @@ Não é necessário baixar as duas. A Ampliada inclui a Essencial. Os downloads 
 
 O download sozinho não instala o motor nem conecta o editor. Não é necessário baixar outro ZIP pelo menu Code. Quem já usa o kit deve extrair a atualização em outra pasta e preservar seus projetos, mídias e configurações anteriores. Leia `docs/EDICOES-E-DESEMPENHO.md` dentro do pacote.
 
+## Depois do teste, abra uma nova tarefa
+
+Não faça a primeira edição real na mesma conversa usada para instalar dependências e executar o teste. Essa conversa contém logs e resultados técnicos que podem aumentar o uso de créditos em cada operação do editor.
+
+Abra **Nova tarefa** no mesmo projeto e cole:
+
+> Use a skill trombino. Quero começar pela decupagem no modo econômico. Reutilize uma transcrição existente ou confirme o idioma antes de transcrever. Planeje todos os cortes antes de alterar a timeline, preserve a sequência original e aplique o plano em lote ou no menor número de lotes possível.
+
+As duas edições agora incluem `docs/DECUPAGEM-SEGURA.md`. O modo econômico em lote é o padrão; a demonstração visual só é usada quando o aluno pedir. Antes de seguir no modo visual, o Codex explica com palavras simples que a execução leva mais tempo e consome mais créditos. O guia também inclui limites de repetição, preferência pelo MCP do editor e interrupção da estratégia após duas tentativas sem mudança.
+
 ## Ferramentas e destino da entrega
 
 - [Codex](https://openai.com/pt-BR/codex/): recebe sua direção e trabalha com as ferramentas e arquivos disponíveis no ambiente local.
@@ -62,7 +72,7 @@ Um vídeo renderizado não vira texto e keyframes nativos no editor. O código H
 
 O kit não cobra assinatura própria nem inclui créditos externos. Codex segue o plano e os limites da conta; editores podem exigir licença. Transcrição e geração externa podem ter custo e não são necessárias para o teste sintético. Transcrição local não está configurada automaticamente.
 
-Nesta revisão, as duas edições passaram nos 11 testes de scripts e nas checagens de estrutura dos 406 cards. Não houve mudança do motor nem novo teste de render nesta revisão documental. A validação anterior de oito segundos está descrita em [VALIDACAO.md](VALIDACAO.md) e no arquivo de mesmo nome dentro dos ZIPs. Ela não comprova todos os cards, as referências novas ou desempenho em computadores modestos.
+Nesta revisão, as duas edições passaram nos 11 testes de scripts e nas checagens de estrutura dos 406 cards. A skill Trombino ganhou proteções de contexto e repetição para decupagem conectada. Não houve mudança do motor nem novo teste de render nesta revisão documental. A validação anterior de oito segundos está descrita em [VALIDACAO.md](VALIDACAO.md) e no arquivo de mesmo nome dentro dos ZIPs. Ela não comprova todos os cards, as referências novas, todas as integrações de editor ou desempenho em computadores modestos.
 
 ## Créditos
 
