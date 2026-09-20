@@ -4,11 +4,13 @@
 
 ## Instalador do MCP do Premiere — Windows e Mac
 
-### [BAIXAR INSTALADOR ÚNICO DO PREMIERE MCP (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.0.0.zip)
+### [BAIXAR INSTALADOR ÚNICO DO PREMIERE MCP 1.1 (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.1.0.zip)
 
 Este pacote foi preparado para alunos iniciantes. Ele detecta Windows ou macOS,
 usa uma versão fixa do MCP, instala um Node.js portátil validado, prepara o
-painel MCP Bridge, configura o Codex e executa o diagnóstico. A instalação comum
+painel MCP Bridge, configura o Codex e executa o diagnóstico. A versão 1.1 também
+ativa o **modo Premiere econômico**: mantém somente o MCP do curso visível durante
+a edição e guarda as integrações anteriores para restauração. A instalação comum
 não depende do registro npm.
 
 Depois de baixar e extrair o ZIP, abra a pasta no Codex e cole:
@@ -21,9 +23,10 @@ Depois de baixar e extrair o ZIP, abra a pasta no Codex e cole:
 
 Ao final, o aluno precisa apenas reiniciar Codex e Premiere, abrir **Janela >
 Extensões > MCP Bridge (CEP)** e clicar em **Start Bridge**. O pacote inclui
-instruções de suporte e recuperação via npm caso o caminho principal falhe.
+instruções para restaurar CapCut, Runway e outros MCPs depois da edição, além da
+recuperação via npm caso o caminho principal falhe.
 
-Integridade do download: [SHA-256](premiere-mcp-instalador-v1.0.0.sha256).
+Integridade do download: [SHA-256](premiere-mcp-instalador-v1.1.0.sha256).
 
 ## Escolha uma edição
 
@@ -57,9 +60,9 @@ Abra **Nova tarefa** no mesmo projeto e cole:
 
 As duas edições agora incluem `docs/DECUPAGEM-SEGURA.md`. O modo econômico em lote é o padrão; a demonstração visual só é usada quando o aluno pedir. Antes de seguir no modo visual, o Codex explica com palavras simples que a execução leva mais tempo e consome mais créditos. O guia também inclui repetição inteligente, preferência pelo MCP e cuidado com projetos em pastas sincronizadas. O limite vale para repetir a mesma ação pelo mesmo método: o Codex verifica o estado, troca de caminho e continua a edição quando isso for seguro.
 
-### Atualizar esta proteção sem reinstalar o MCP
+### Atualização para quem já instalou outro MCP
 
-Quem já instalou o MCP do Premiere não precisa instalá-lo novamente. Baixe de novo a mesma edição do kit, extraia em uma pasta nova e abra essa nova pasta como projeto no Codex. O MCP permanece instalado no computador. Preserve a pasta anterior, projetos, mídias, configurações e arquivos `.env`; depois do teste da nova pasta, leve somente cópias dos projetos que deseja continuar.
+Para receber a proteção contra catálogos enormes de ferramentas, execute uma vez o **instalador 1.1**, mesmo que o Premiere já esteja conectado. Ele faz backup da configuração, instala o MCP de descoberta reduzida e desativa temporariamente as integrações redundantes enquanto o modo Premiere estiver ativo. Nada é desinstalado; o pacote inclui restauração. Preserve a pasta anterior, projetos, mídias, configurações e arquivos `.env`.
 
 ### J-cuts e finais de palavras
 
@@ -72,7 +75,7 @@ A versão 2.1.2 diferencia corte apertado de J-cut verdadeiro. Na limpeza comum,
 - Kit Trombino: organiza o fluxo do curso e ajuda a descobrir o método de cada aluno.
 - MCP do editor: integração separada; instale apenas a necessária.
 
-O curso demonstra principalmente Premiere no Windows. Use o [instalador único do Premiere MCP](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.0.0.zip) para Windows ou Mac. [DaVinci MCP](https://github.com/samuelgursky/davinci-resolve-mcp) e [CapCut MCP](https://github.com/yabdulaziz2009-dev/capcut-mcp) têm requisitos e formas de funcionamento próprios. Não são instalados automaticamente pelo kit de animação.
+O curso demonstra principalmente Premiere no Windows. Use o [instalador único do Premiere MCP 1.1](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.1.0.zip) para Windows ou Mac. [DaVinci MCP](https://github.com/samuelgursky/davinci-resolve-mcp) e [CapCut MCP](https://github.com/yabdulaziz2009-dev/capcut-mcp) têm requisitos e formas de funcionamento próprios. Não são instalados automaticamente pelo kit de animação.
 
 Um vídeo renderizado não vira texto e keyframes nativos no editor. O código HyperFrames permanece editável; entrega nativa depende da integração e precisa ser verificada.
 
@@ -80,7 +83,7 @@ Um vídeo renderizado não vira texto e keyframes nativos no editor. O código H
 
 O kit não cobra assinatura própria nem inclui créditos externos. Codex segue o plano e os limites da conta; editores podem exigir licença. Transcrição e geração externa podem ter custo e não são necessárias para o teste sintético. Transcrição local não está configurada automaticamente.
 
-Nesta revisão, as duas edições passaram nos 11 testes de scripts e nas checagens de estrutura dos 406 cards. A skill Trombino ganhou proteções de contexto e repetição para decupagem conectada. Não houve mudança do motor nem novo teste de render nesta revisão documental. A validação anterior de oito segundos está descrita em [VALIDACAO.md](VALIDACAO.md) e no arquivo de mesmo nome dentro dos ZIPs. Ela não comprova todos os cards, as referências novas, todas as integrações de editor ou desempenho em computadores modestos.
+Nesta revisão, as duas edições passaram nos 12 testes de scripts e nas checagens de estrutura dos 406 cards. A skill Trombino ganhou proteções de contexto e repetição para decupagem conectada. Não houve mudança do motor nem novo teste de render nesta revisão documental. A validação anterior de oito segundos está descrita em [VALIDACAO.md](VALIDACAO.md) e no arquivo de mesmo nome dentro dos ZIPs. Ela não comprova todos os cards, as referências novas, todas as integrações de editor ou desempenho em computadores modestos.
 
 ## Créditos
 

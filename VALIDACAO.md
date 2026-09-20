@@ -29,3 +29,7 @@ Esta revisão adiciona separação entre instalação e edição, uma tarefa lim
 ## J-cut e proteção fonética 2.1.2
 
 A skill agora distingue corte apertado de J-cut verdadeiro, exige antecipação real do áudio seguinte quando J-cut for solicitado e impede que cortes alinhados sejam descritos como J-cuts. O cortador de silêncios ganhou `--word-tail-pad`, com margem padrão de 160 ms depois do timestamp de cada palavra, além de revisão obrigatória por escuta para preservar fonemas finais. Um novo teste automatizado verifica essa margem. As duas edições passaram em 12 testes, sincronização das skills e checagem estrutural. Nenhuma sessão real de editor foi executada nesta revisão.
+
+## Isolamento de ferramentas 2.1.3 / instalador 1.1.0
+
+O instalador agora ativa um modo Premiere econômico reversível no `config.toml` do usuário. Ele mantém `premiere_pro_trombino`, desativa temporariamente outros MCPs e apps, cria backup e grava o estado necessário para restaurar somente as opções alteradas. O MCP vendorizado continua em `adobe-premiere-pro-mcp` 1.2.8 e anuncia o catálogo reduzido por padrão. O ativador foi testado com servidores concorrentes, seção `[features]` existente, ativação repetida e restauração dos valores anteriores. O teste não substitui uma sessão real do Codex com Premiere licenciado.
