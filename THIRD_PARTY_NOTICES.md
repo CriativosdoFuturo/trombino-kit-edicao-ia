@@ -31,4 +31,14 @@ rights; inclusion does not grant rights to third-party brands or embedded media.
 
 ## Criativos do Futuro distribution
 
+### Instalador Premiere MCP
+
+- Adobe Premiere Pro MCP 1.2.8: MIT.
+- Node.js portátil: distribuição oficial, validada por SHA-256.
+- FFmpeg: instalado localmente; aplicam-se as licenças dos componentes do
+  binário distribuído.
+- whisper.cpp: MIT.
+- Modelo Whisper `ggml-small.bin`: baixado do repositório do whisper.cpp e
+  validado por SHA-256.
+
 Adaptation: Trombino / Criativos do Futuro. Based on Nate Herk’s HyperFrames Student Kit: https://github.com/nateherkai/hyperframes-student-kit . Original licenses and credits remain. This distribution omits the upstream root AIS assets, branded video-projects, and examples/showcase media described above. It includes no personal footage, fonts, editing profiles, credentials, or paid-service credits. HyperFrames is a third-party engine, not authored by this course.

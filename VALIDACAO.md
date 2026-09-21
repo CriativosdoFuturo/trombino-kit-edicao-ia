@@ -33,3 +33,15 @@ A skill agora distingue corte apertado de J-cut verdadeiro, exige antecipação 
 ## Isolamento de ferramentas 2.1.3 / instalador 1.1.0
 
 O instalador agora ativa um modo Premiere econômico reversível no `config.toml` do usuário. Ele mantém `premiere_pro_trombino`, desativa temporariamente outros MCPs e apps, cria backup e grava o estado necessário para restaurar somente as opções alteradas. O MCP vendorizado continua em `adobe-premiere-pro-mcp` 1.2.8 e anuncia o catálogo reduzido por padrão. O ativador foi testado com servidores concorrentes, seção `[features]` existente, ativação repetida e restauração dos valores anteriores. O teste não substitui uma sessão real do Codex com Premiere licenciado.
+
+## Transcrição local e reparo 1.2.0
+
+O instalador 1.2 configura Codex e Claude com caminhos absolutos, instala FFmpeg,
+whisper.cpp e o modelo multilíngue `small`, e adiciona `transcribe_media` e
+`read_local_transcript` ao catálogo do MCP. Foram validados: sintaxe dos
+scripts Windows e JavaScript, atualização preservando configurações alheias,
+busca das novas ferramentas, paginação e reaproveitamento do cache com
+executáveis simulados, além dos hashes e da execução do binário Windows x64 do
+whisper.cpp. A transcrição local equivalente já foi usada no computador do
+autor; o instalador 1.2 ainda precisa de validação integral em um Mac limpo e em
+Windows ARM64.

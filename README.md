@@ -4,14 +4,15 @@
 
 ## Instalador do MCP do Premiere — Windows e Mac
 
-### [BAIXAR INSTALADOR ÚNICO DO PREMIERE MCP 1.1 (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.1.0.zip)
+### [BAIXAR INSTALADOR ATUAL DO PREMIERE MCP (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-latest.zip)
 
 Este pacote foi preparado para alunos iniciantes. Ele detecta Windows ou macOS,
 usa uma versão fixa do MCP, instala um Node.js portátil validado, prepara o
-painel MCP Bridge, configura o Codex e executa o diagnóstico. A versão 1.1 também
-ativa o **modo Premiere econômico**: mantém somente o MCP do curso visível durante
-a edição e guarda as integrações anteriores para restauração. A instalação comum
-não depende do registro npm.
+painel MCP Bridge, configura Codex e Claude e executa o diagnóstico. A versão
+1.2 também instala FFmpeg, whisper.cpp e o modelo multilíngue `small`, com
+transcrição local, timestamps e cache. Ela ativa o **modo Premiere econômico**,
+mantém somente o MCP do curso visível durante a edição e guarda as integrações
+anteriores para restauração.
 
 Depois de baixar e extrair o ZIP, abra a pasta no Codex e cole:
 
@@ -26,7 +27,7 @@ Extensões > MCP Bridge (CEP)** e clicar em **Start Bridge**. O pacote inclui
 instruções para restaurar CapCut, Runway e outros MCPs depois da edição, além da
 recuperação via npm caso o caminho principal falhe.
 
-Integridade do download: [SHA-256](premiere-mcp-instalador-v1.1.0.sha256).
+Integridade do download: [SHA-256](premiere-mcp-instalador-latest.sha256).
 
 ## Escolha uma edição
 
@@ -62,7 +63,11 @@ As duas edições agora incluem `docs/DECUPAGEM-SEGURA.md`. O modo econômico em
 
 ### Atualização para quem já instalou outro MCP
 
-Para receber a proteção contra catálogos enormes de ferramentas, execute uma vez o **instalador 1.1**, mesmo que o Premiere já esteja conectado. Ele faz backup da configuração, instala o MCP de descoberta reduzida e desativa temporariamente as integrações redundantes enquanto o modo Premiere estiver ativo. Nada é desinstalado; o pacote inclui restauração. Preserve a pasta anterior, projetos, mídias, configurações e arquivos `.env`.
+Para receber transcrição local, reparo do Claude/Codex e proteção contra
+catálogos enormes, execute uma vez o **instalador atual**, mesmo que o Premiere
+já esteja conectado. Ele faz backup da configuração, corrige caminhos antigos,
+instala o MCP de descoberta reduzida e desativa temporariamente integrações
+redundantes enquanto o modo Premiere estiver ativo. Nada é desinstalado.
 
 ### J-cuts e finais de palavras
 
@@ -75,13 +80,23 @@ A versão 2.1.2 diferencia corte apertado de J-cut verdadeiro. Na limpeza comum,
 - Kit Trombino: organiza o fluxo do curso e ajuda a descobrir o método de cada aluno.
 - MCP do editor: integração separada; instale apenas a necessária.
 
-O curso demonstra principalmente Premiere no Windows. Use o [instalador único do Premiere MCP 1.1](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-v1.1.0.zip) para Windows ou Mac. [DaVinci MCP](https://github.com/samuelgursky/davinci-resolve-mcp) e [CapCut MCP](https://github.com/yabdulaziz2009-dev/capcut-mcp) têm requisitos e formas de funcionamento próprios. Não são instalados automaticamente pelo kit de animação.
+O curso demonstra principalmente Premiere no Windows. Use o [instalador atual do Premiere MCP](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-latest.zip) para Windows ou Mac.
+
+**Abrir o CapCut não conecta o GPT ao editor.** O kit atual não instala uma
+integração do CapCut. O [MCP experimental citado](https://github.com/yabdulaziz2009-dev/capcut-mcp)
+edita arquivos locais de projeto com o CapCut fechado, tem um conjunto limitado
+de operações e foi validado pelo autor somente no CapCut 9.1 para Windows. Ele
+não reproduz ainda a experiência do Premiere mostrada no curso. DaVinci e Final
+Cut também exigem integrações próprias e validação separada.
 
 Um vídeo renderizado não vira texto e keyframes nativos no editor. O código HyperFrames permanece editável; entrega nativa depende da integração e precisa ser verificada.
 
 ## Custos e validação
 
-O kit não cobra assinatura própria nem inclui créditos externos. Codex segue o plano e os limites da conta; editores podem exigir licença. Transcrição e geração externa podem ter custo e não são necessárias para o teste sintético. Transcrição local não está configurada automaticamente.
+O kit não cobra assinatura própria nem inclui créditos externos. Codex e Claude
+seguem os limites das respectivas contas; o Premiere exige sua própria licença.
+A transcrição do instalador 1.2 roda localmente com whisper.cpp e não usa API
+paga. O modelo é baixado uma vez e ocupa cerca de 466 MB.
 
 Nesta revisão, as duas edições passaram nos 12 testes de scripts e nas checagens de estrutura dos 406 cards. A skill Trombino ganhou proteções de contexto e repetição para decupagem conectada. Não houve mudança do motor nem novo teste de render nesta revisão documental. A validação anterior de oito segundos está descrita em [VALIDACAO.md](VALIDACAO.md) e no arquivo de mesmo nome dentro dos ZIPs. Ela não comprova todos os cards, as referências novas, todas as integrações de editor ou desempenho em computadores modestos.
 
