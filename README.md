@@ -2,9 +2,16 @@
 
 **Criativos do Futuro** · Skills e motion graphics com HyperFrames.
 
+> **Instalação temporariamente suspensa — alerta em investigação (21/09/2026).**
+> O Defender bloqueou um download do instalador latest como Trojan:Script/Ulthar.A!ml.
+> Não instale nem libere os ZIPs do Premiere até a conclusão da análise.
+> Não desative proteções nem adicione exclusões. O arquivo interno responsável
+> ainda não foi identificado e não há confirmação de falso positivo.
+> As instruções abaixo são referência, não liberação para instalar.
+
 ## Instalador do MCP do Premiere — Windows e Mac
 
-### [BAIXAR INSTALADOR ATUAL DO PREMIERE MCP (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-latest.zip)
+### [ARQUIVO EM INVESTIGAÇÃO — NÃO INSTALAR (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-mcp-instalador-latest.zip)
 
 Este pacote foi preparado para alunos iniciantes. Ele detecta Windows ou macOS,
 usa uma versão fixa do MCP, instala um Node.js portátil validado, prepara o
