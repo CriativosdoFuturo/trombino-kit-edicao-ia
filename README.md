@@ -9,12 +9,20 @@
 Este pacote foi preparado para alunos iniciantes. Ele detecta Windows ou macOS,
 usa uma versão fixa do MCP, instala um Node.js portátil validado, prepara o
 painel MCP Bridge, configura Codex e Claude e executa o diagnóstico. A versão
-1.2 também instala FFmpeg, whisper.cpp e o modelo multilíngue `small`, com
+1.2.1 também instala FFmpeg, whisper.cpp e o modelo multilíngue `small`, com
 transcrição local, timestamps e cache. Ela ativa o **modo Premiere econômico**,
 mantém somente o MCP do curso visível durante a edição e guarda as integrações
 anteriores para restauração.
 
-Depois de baixar e extrair o ZIP, abra a pasta no Codex e cole:
+### Instalação
+
+1. Clique no link acima e baixe o ZIP pelo navegador. Extraia o arquivo.
+2. Abra **a pasta extraída do instalador do Premiere** no Codex. No Mac, clique
+   em **+ > Projeto ou pasta** e selecione essa pasta.
+3. Use **Light/Leve** (ou `Low`) durante a instalação. Use Medium somente se
+   aparecer uma falha difícil de diagnosticar.
+4. Abra uma tarefa nova e cole somente o prompt abaixo. Não prepare o
+   HyperFrames nem renderize o teste de oito segundos na tarefa de instalação.
 
 > Leia o README.md e o AGENTS.md. Detecte meu sistema operacional e instale o
 > MCP do Adobe Premiere usando o instalador deste pacote. Continue até o
@@ -22,12 +30,31 @@ Depois de baixar e extrair o ZIP, abra a pasta no Codex e cole:
 > aprovação ou quando chegar aos dois passos manuais exibidos pelo instalador.
 > Não use APIs pagas e não altere nenhum projeto aberto no Premiere.
 
+Não é necessário colar o README no chat: o Codex lê os arquivos da pasta.
+
 Ao final, o aluno precisa apenas reiniciar Codex e Premiere, abrir **Janela >
 Extensões > MCP Bridge (CEP)** e clicar em **Start Bridge**. O pacote inclui
 instruções para restaurar CapCut, Runway e outros MCPs depois da edição, além da
 recuperação via npm caso o caminho principal falhe.
 
 Integridade do download: [SHA-256](premiere-mcp-instalador-latest.sha256).
+
+A versão 1.2.1 corrige o PATH do Node portátil e o caminho do diagnóstico de
+transcrição. No Mac, ela recusa execução dentro de Linux/VM: nesse caso, abra o
+Terminal do próprio Mac na pasta extraída e execute `bash ./install-mac.sh`.
+Conectar uma pasta ao Claude não comprova acesso ao terminal real do Mac.
+
+O uso do agente continua sujeito aos limites e cobranças do Codex/Claude,
+mesmo com transcrição local. Não há garantia de preço fixo por edição.
+
+Se o antivírus bloquear o download, não desative a proteção nem crie exclusões.
+Envie ao suporte o nome da ameaça, o arquivo afetado e a versão do kit. Existe
+um relato de bloqueio da v1.0.0 ainda sem identificação da ameaça; não foi
+classificado como falso positivo nem resolvido pela troca de versão.
+
+Na descrição da aula, use o endereço `premiere-mcp-instalador-latest.zip` acima.
+Endereços antigos com versão fixa continuam entregando o pacote antigo.
+
 
 ## Escolha uma edição
 
@@ -95,7 +122,7 @@ Um vídeo renderizado não vira texto e keyframes nativos no editor. O código H
 
 O kit não cobra assinatura própria nem inclui créditos externos. Codex e Claude
 seguem os limites das respectivas contas; o Premiere exige sua própria licença.
-A transcrição do instalador 1.2 roda localmente com whisper.cpp e não usa API
+A transcrição do instalador 1.2.1 roda localmente com whisper.cpp e não usa API
 paga. O modelo é baixado uma vez e ocupa cerca de 466 MB.
 
 Nesta revisão, as duas edições passaram nos 12 testes de scripts e nas checagens de estrutura dos 406 cards. A skill Trombino ganhou proteções de contexto e repetição para decupagem conectada. Não houve mudança do motor nem novo teste de render nesta revisão documental. A validação anterior de oito segundos está descrita em [VALIDACAO.md](VALIDACAO.md) e no arquivo de mesmo nome dentro dos ZIPs. Ela não comprova todos os cards, as referências novas, todas as integrações de editor ou desempenho em computadores modestos.
