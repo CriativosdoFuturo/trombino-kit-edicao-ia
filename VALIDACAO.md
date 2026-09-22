@@ -45,3 +45,8 @@ executáveis simulados, além dos hashes e da execução do binário Windows x64
 whisper.cpp. A transcrição local equivalente já foi usada no computador do
 autor; o instalador 1.2 ainda precisa de validação integral em um Mac limpo e em
 Windows ARM64.
+
+
+## Distribuição unificada 2.1.4 — 22/09/2026
+
+Base: ZIP Ampliado publicado anteriormente. Unificação dos dois endereços de download, instruções de entrada e metadados. Nenhum motor, script executável, skill, dependência ou referência foi alterado nesta revisão. Conferidos CRC do ZIP, preservação dos demais arquivos e igualdade dos dois pacotes. Não houve novo render nem teste de instalação em máquina limpa. As limitações anteriores continuam válidas.
