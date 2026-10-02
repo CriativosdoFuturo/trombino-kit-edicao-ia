@@ -2,7 +2,7 @@
 
 **Criativos do Futuro · Edição única 2.1.4 · 22/09/2026**
 
-> **Premiere: [copie este link no Codex e peça “Prepare para eu usar”](./INSTALAR-PREMIERE.md).** O fluxo conduz a instalação e confirma a conexão, sem edição de teste. Os instaladores antigos continuam retirados; use a entrada atual.
+> **Premiere: [copie este link no Codex junto com o prompt da aula](./INSTALAR-PREMIERE.md).** Use o [prompt completo da primeira tentativa](./PROMPT-PREMIERE.txt), que também permite começar quando a leitura automática do guia falha. A checagem é somente de instalação, conexão e leitura, sem edição de teste. Os instaladores antigos continuam retirados; use a entrada atual.
 
 ## Um único kit para acompanhar as aulas
 
@@ -37,7 +37,9 @@ Um vídeo renderizado pode ser importado no editor, mas não vira texto e keyfra
 
 Use **[INSTALAR-PREMIERE.md](./INSTALAR-PREMIERE.md)** como único endereço para o aluno. Não é necessário escolher ZIP ou versão: o Codex lê a orientação, reaproveita uma instalação funcional ou executa o instalador apropriado e verifica dependências, catálogo e conexão. Abrir o painel da Adobe e confirmar permissões ainda pode exigir participação do aluno.
 
-O fluxo 1.3.0 preserva instalações anteriores, configura somente o Codex e separa “instalado” de “conectado”. O servidor e seu catálogo de transcrição responderam nesta revisão; a instalação completa no host ficou pendente por bloqueio de gravação, e macOS não foi validado. O verificador precisa confirmar a conexão real no computador antes de declarar pronto. Não foi executada edição de teste.
+O fluxo 1.3.2 preserva instalações anteriores, configura somente o Codex e separa “instalado” de “conectado”. Incorpora certificados do sistema com TLS ativo, verificação de espaço e opção de outro disco, além das adaptações do painel para CEP 9. A telemetria do painel começa desligada em instalações novas, preservando preferências existentes. Um atendimento relatou conexão e leitura reais no Windows 10/Premiere 2020 após essas adaptações. O pacote consolidado passou por verificações locais, mas não por uma nova instalação completa; macOS e outras versões não foram validados nesta revisão. O verificador deve confirmar a conexão real no computador antes de declarar pronto. Não foi executada edição de teste.
+
+**Se houver um problema pendente, o agente deve explicar a correção proposta e terminar com: “Posso resolver isso pra você?”.** Após a autorização, deve executar a correção, conferir o resultado e continuar.
 
 Os arquivos antigos `premiere-mcp-instalador-*` permanecem retirados de `main`, com histórico preservado. A última leitura da amostra anterior na Microsoft mostrou **No malware detected** em Cloud e Client, com parecer final **Pending**. Esse resultado não certifica a nova versão. Não contorne alertas nem desative proteções.
 
