@@ -1,10 +1,16 @@
 # Preparar o Premiere para editar com o Codex
 
-**Estado em 02/10/2026: fluxo atual 1.3.1 publicado para preparação e checagem.** A retirada registrada no histórico se refere aos ZIPs antigos `premiere-mcp-instalador-*`. A instalação completa e a conexão da versão atual ainda devem ser confirmadas no computador; não há certificação de todas as versões do Premiere.
+**Estado em 02/10/2026: fluxo atual 1.3.2 publicado para preparação e checagem.** A retirada registrada no histórico se refere aos ZIPs antigos `premiere-mcp-instalador-*`. As correções de certificados, CEP 9 e diretórios reproduzem o atendimento relatado com conexão e leitura no Premiere 2020. O pacote consolidado passou por verificações locais, mas ainda não teve nova instalação completa. Não há certificação de todas as versões do Premiere.
 
 **Leitura direta, sem a interface do GitHub:** https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/INSTALAR-PREMIERE.md
 
 Este arquivo é autossuficiente como orientação de instalação. Não exige um AGENTS.md remoto ou uma pasta local já preparada. Se a página `/blob/main/` não abrir, leia o endereço direto acima. Se ambos falharem, informe o erro de acesso; não conclua que o fluxo atual está suspenso apenas com base em um trecho antigo de busca. Um alerta real de segurança sobre o arquivo atual continua exigindo interrupção e diagnóstico.
+
+**Se a ferramenta de pesquisa não conseguir ler este guia:** tente a leitura pelo navegador disponível ou baixe somente o texto pelo terminal local, com as permissões normais de rede. Leia o conteúdo antes de executar qualquer comando nele. Não use trechos de busca como substituto do arquivo atual. Se houver bloqueio explícito de segurança ou de política de acesso, respeite-o; não use outro canal para contorná-lo. A ausência de README/AGENTS em uma pasta vazia não impede começar esta preparação.
+
+## Link e prompt para uma conversa nova
+
+Copie o endereço desta página e envie com o texto de [PROMPT-PREMIERE.txt](./PROMPT-PREMIERE.txt). O prompt contém as instruções de recuperação de leitura, para funcionar sem depender de outra conversa. Não é necessário baixar ou escolher ZIPs manualmente.
 
 Este é o endereço único do Premiere no curso Trombino / Criativos do Futuro. Cole este link no **Codex instalado no mesmo computador do Premiere** junto com o **PROMPT DA PRIMEIRA TENTATIVA** da aula. O agente conduz a preparação; você não precisa escolher versões nem copiar comandos de terminal.
 
@@ -14,9 +20,12 @@ O Premiere precisa estar instalado e licenciado. Abrir o painel da Adobe, confir
 
 Objetivo: preparar a conexão com o Premiere e a transcrição local, verificar somente disponibilidade e leitura e devolver ao aluno o próximo passo concreto. Continue trabalhando quando o aluno fizer perguntas. Use terminal e scripts locais para economizar chamadas ao modelo. Não entregue uma lista de comandos para o aluno executar quando você puder executá-los.
 
+REGRA OBRIGATÓRIA AO ENCONTRAR UM PROBLEMA: não termine apenas apontando o erro. Diagnostique e apresente uma solução concreta em linguagem simples. Execute as correções que já estiverem autorizadas e confira o resultado. Se a resposta terminar com um problema ainda pendente, explique o que propõe fazer, qualquer participação necessária e finalize exatamente com a pergunta: “Posso resolver isso pra você?”. A pergunta deve corresponder a uma ação possível; não prometa contornar bloqueios de segurança. Depois da autorização, execute, confira e retome a preparação. Se tudo já estiver concluído, informe o resultado e o próximo passo de uso, sem inventar um problema ou pedir autorização de novo.
+
 ### 1. Reaproveitar antes de instalar
 
 - Trabalhe no Windows ou macOS real do aluno, onde o Premiere está instalado. Um terminal Linux remoto não configura o editor do computador dele.
+- Registre sistema, arquitetura e versão do Premiere. Não instale nem atualize o Premiere automaticamente. Um atendimento no Windows 10/Premiere 2020 14.0.0.571 confirmou conexão e leitura após os ajustes agora incorporados. Isso não comprova todas as operações nem outras versões; uma faixa aceita pelo manifesto não basta. Primeiro confira os requisitos do pacote e depois a conexão real, sem edição de teste.
 - Localize o executável do Codex com `Get-Command codex` no Windows ou `command -v codex` no Mac. Se não estiver no PATH, localize a CLI distribuída com o aplicativo, sem instalar um segundo cliente desnecessariamente.
 - Confira as integrações existentes. Se já houver MCP do Premiere configurado, tente sua consulta de conexão e catálogo uma vez. Se funcionar, use-o. Não troque CEP por UXP nem sobrescreva patches locais. Não publique a configuração nem credenciais.
 - Uma instalação já funcional não precisa ser reinstalada porque uma versão antiga do instalador foi retirada do site. Falta de painel aberto não significa instalação quebrada.
@@ -24,18 +33,23 @@ Objetivo: preparar a conexão com o Premiere e a transcrição local, verificar 
 
 ### 2. Instalação nova
 
-A versão 1.3.1 detecta as contas restritas `codexsandboxoffline`/`codexsandboxonline` antes de baixar ou instalar. O painel Adobe precisa ser registrado na conta do usuário do Premiere. Se aparecer `RESTRICTED_EXECUTION`, use somente o mecanismo de execução autorizado disponibilizado pelo cliente. Se ele não estiver disponível, entregue o script já revisado ao usuário para execução manual na própria conta. Não altere ACLs, proteções ou políticas para contornar o bloqueio. Não repita pedidos de acesso a pastas esperando que isso troque a conta de execução.
+**Espaço e certificados:** confira espaço antes de baixar. O instalador reserva 2 GiB para dependências e soma a reserva do painel/configuração/ponte por volume. O bootstrap Windows verifica 512 MB para preparação temporária. Se faltar espaço, consulte discos disponíveis e proponha uma pasta; use `-Root` e, se necessário, `-StageRoot` no bootstrap Windows, ou `--root` no `install.mjs`. Não escolha outro disco nem remova arquivos sem a decisão do usuário. Os arquivos do painel e a configuração continuam no perfil do usuário.
 
-Antes dos downloads, o instalador também verifica a gravação nos destinos e a abertura da configuração existente sem modificar seu conteúdo. Esses checks não substituem a confirmação posterior de conexão.
+O `install.mjs` adiciona os certificados confiáveis do sistema às autoridades já usadas pelo Node, mantendo a validação TLS. Não é necessário desligar validação ou alterar certificados. O painel usa manifesto 7/CSXS 9 e criação de diretórios compatível com o Node antigo do CEP 9. Em instalações novas, telemetria do painel começa desligada; preferências existentes são preservadas.
+
+
+A versão 1.3.2 detecta as contas restritas `codexsandboxoffline`/`codexsandboxonline` antes de baixar ou instalar. O painel Adobe precisa ser registrado na conta do usuário do Premiere. Se aparecer `RESTRICTED_EXECUTION`, use somente o mecanismo de execução autorizado disponibilizado pelo cliente. Se ele não estiver disponível, entregue o script já revisado ao usuário para execução manual na própria conta. Não altere ACLs, proteções ou políticas para contornar o bloqueio. Não repita pedidos de acesso a pastas esperando que isso troque a conta de execução.
+
+Antes dos downloads de dependências, o instalador também verifica a gravação nos destinos e a abertura da configuração existente sem modificar seu conteúdo. Esses checks não substituem a confirmação posterior de conexão.
 
 
 Use exclusivamente os arquivos deste repositório:
 
 - Windows: [instalar-premiere.ps1](./instalar-premiere.ps1).
 - Mac: [instalar-premiere-mac.sh](./instalar-premiere-mac.sh).
-- Código completo: [premiere-setup-1.3.1.zip](./premiere-setup-1.3.1.zip), com [SHA-256](./premiere-setup-1.3.1.sha256).
+- Código completo: [premiere-setup-1.3.2.zip](./premiere-setup-1.3.2.zip), com [SHA-256](./premiere-setup-1.3.2.sha256).
 
-Baixe o script pelo botão Raw ou por `raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/`. Leia-o antes de executar. O bootstrap confere o SHA-256 do pacote antes de extrair e executar; as dependências Windows e o modelo também têm hashes fixados. Reuse Node 20+ existente, se funcionar; caso contrário o bootstrap obtém o Node oficial.
+Baixe o script pelo botão Raw ou por `raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/`. Leia-o antes de executar. O bootstrap confere o SHA-256 do pacote antes de extrair e executar; as dependências Windows e o modelo também têm hashes fixados. Reuse Node existente com suporte a getCACertificates/setDefaultCACertificates (22.19+ na linha 22, 24.5+ na linha 24), se funcionar; caso contrário o bootstrap obtém o Node oficial.
 
 No Windows execute o script salvo com PowerShell e, se necessário, informe `-CodexPath` e `-NodePath` com os caminhos absolutos encontrados. No Mac execute com `bash`, passando o caminho da CLI Codex como primeiro argumento. O Mac usa Homebrew para FFmpeg e Whisper: se não existir, prepare o Homebrew conforme sua documentação oficial, com as confirmações exigidas, e retome. Não execute um script remoto sem lê-lo. A instalação nativa no Mac ainda não foi validada nesta revisão; confirme cada resultado em vez de prometer compatibilidade universal.
 
@@ -59,7 +73,7 @@ Finalize com: **próximo passo para o aluno** e uma **conclusão curta**, distin
 
 ## Versão e histórico
 
-Fluxo 1.3.1, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
+Fluxo 1.3.2, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
 
 Nesta revisão, o servidor real iniciou por stdio e disponibilizou o catálogo e o schema da transcrição. Isso não constitui teste de edição. A instalação completa e a conexão precisam ser confirmadas na máquina pelo verificador acima; não são presumidas.
 

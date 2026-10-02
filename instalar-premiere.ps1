@@ -1,10 +1,14 @@
 ﻿[CmdletBinding()]
-param([string]$NodePath,[string]$CodexPath)
+param([string]$NodePath,[string]$CodexPath,[string]$Root,[string]$StageRoot)
 $ErrorActionPreference='Stop'
 $TaskIdentity=[Security.Principal.WindowsIdentity]::GetCurrent().Name
 if(($TaskIdentity.Split('\')[-1]) -match '(?i)^codexsandbox'){throw 'RESTRICTED_EXECUTION: execute na conta do usuario do Premiere pelo mecanismo autorizado do cliente ou manualmente. Nenhum download ou instalacao iniciado.'}
 
-$TaskStage=Join-Path $env:TEMP ('trombino-premiere-1.3.1-'+[guid]::NewGuid().ToString('N'))
+if(-not $Root){$Root=Join-Path $env:LOCALAPPDATA 'CriativosdoFuturo/PremiereMCP'}
+if(-not $StageRoot){$StageRoot=$env:TEMP}
+$TaskStageDrive=Get-PSDrive -Name ([IO.Path]::GetPathRoot($StageRoot).TrimEnd('\').TrimEnd(':'))
+if($null -eq $TaskStageDrive.Free -or $TaskStageDrive.Free -lt 512MB){throw 'INSUFFICIENT_STAGE_SPACE: selecione -StageRoot em um disco com pelo menos 512 MB livres. Nao apague arquivos automaticamente.'}
+$TaskStage=Join-Path $StageRoot ('trombino-premiere-1.3.2-'+[guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $TaskStage | Out-Null
 function DownloadVerified([string]$Url,[string]$File,[string]$Hash){
  Invoke-WebRequest -Uri $Url -OutFile $File -UseBasicParsing
@@ -20,6 +24,10 @@ if(-not $CodexPath){
 }
 if(-not $CodexPath){throw 'Codex CLI nao localizado. O agente deve localizar o executavel do aplicativo Codex e repetir com -CodexPath; nao instalar outro cliente.'}
 if(-not $NodePath){$cmd=Get-Command node -ErrorAction SilentlyContinue;if($cmd){$NodePath=$cmd.Source}}
+if($NodePath){
+ & $NodePath --input-type=module -e "import tls from 'node:tls'; process.exit(typeof tls.getCACertificates==='function' && typeof tls.setDefaultCACertificates==='function' ? 0 : 1)"
+ if($LASTEXITCODE -ne 0){$NodePath=$null}
+}
 if(-not $NodePath){
  $Arch=if([Runtime.InteropServices.RuntimeInformation]::OSArchitecture -eq 'Arm64'){'arm64'}else{'x64'}
  $Hashes=@{x64='158f7685b44de51f6c0df1d153526cbcd3e1bc739a8dfc607721cef75de9e541';arm64='8779b1bde1d39f8d420e3b57aa657b39891af434d3de44a919044cec06785921'}
@@ -29,11 +37,10 @@ if(-not $NodePath){
  $NodePath=Join-Path $TaskStage "$Name/node.exe"
 }
 $Bundle=Join-Path $TaskStage 'setup.zip'
-DownloadVerified 'https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/premiere-setup-1.3.1.zip' $Bundle 'd6d48c2396c73d2b7c8dbe0cb60be115a636ed9f3dab49d9ace7caafb9b3dc37'
+DownloadVerified 'https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/premiere-setup-1.3.2.zip' $Bundle '3e664bbfb29cc3f57333ca05cc37ffd19e93fffdb1af641b53c3074894cd9f23'
 $Extract=Join-Path $TaskStage 'setup';Expand-Archive -LiteralPath $Bundle -DestinationPath $Extract
-& $NodePath (Join-Path $Extract 'install.mjs') --codex $CodexPath
+& $NodePath (Join-Path $Extract 'install.mjs') --root $Root --codex $CodexPath
 if($LASTEXITCODE -ne 0){throw 'A instalacao informou uma pendencia. Preserve a mensagem e diagnostique; nao repita em loop.'}
-$Root=Join-Path $env:LOCALAPPDATA 'CriativosdoFuturo/PremiereMCP'
 if(Test-Path -LiteralPath (Join-Path $Root 'installation.json')){
  & (Join-Path $Root 'runtime/node.exe') (Join-Path $Root 'doctor.mjs')
  if($LASTEXITCODE -ne 0){throw 'Dependencias ainda nao estao prontas.'}
