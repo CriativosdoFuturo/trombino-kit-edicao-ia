@@ -8,7 +8,7 @@ if(-not $Root){$Root=Join-Path $env:LOCALAPPDATA 'CriativosdoFuturo/PremiereMCP'
 if(-not $StageRoot){$StageRoot=$env:TEMP}
 $TaskStageDrive=Get-PSDrive -Name ([IO.Path]::GetPathRoot($StageRoot).TrimEnd('\').TrimEnd(':'))
 if($null -eq $TaskStageDrive.Free -or $TaskStageDrive.Free -lt 512MB){throw 'INSUFFICIENT_STAGE_SPACE: selecione -StageRoot em um disco com pelo menos 512 MB livres. Nao apague arquivos automaticamente.'}
-$TaskStage=Join-Path $StageRoot ('trombino-premiere-1.3.2-'+[guid]::NewGuid().ToString('N'))
+$TaskStage=Join-Path $StageRoot ('trombino-premiere-1.3.3-'+[guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $TaskStage | Out-Null
 function DownloadVerified([string]$Url,[string]$File,[string]$Hash){
  Invoke-WebRequest -Uri $Url -OutFile $File -UseBasicParsing
@@ -37,7 +37,7 @@ if(-not $NodePath){
  $NodePath=Join-Path $TaskStage "$Name/node.exe"
 }
 $Bundle=Join-Path $TaskStage 'setup.zip'
-DownloadVerified 'https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/premiere-setup-1.3.2.zip' $Bundle '3e664bbfb29cc3f57333ca05cc37ffd19e93fffdb1af641b53c3074894cd9f23'
+DownloadVerified 'https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/premiere-setup-1.3.3.zip' $Bundle '5170b2ffd621e1200508a18f59e0c697570062e5c3fb939f269b36732f7e05cc'
 $Extract=Join-Path $TaskStage 'setup';Expand-Archive -LiteralPath $Bundle -DestinationPath $Extract
 & $NodePath (Join-Path $Extract 'install.mjs') --root $Root --codex $CodexPath
 if($LASTEXITCODE -ne 0){throw 'A instalacao informou uma pendencia. Preserve a mensagem e diagnostique; nao repita em loop.'}

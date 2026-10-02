@@ -5,9 +5,9 @@ https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/blob/main/INSTALAR-P
 
 Se a leitura do guia falhar, estas instruções permitem começar sem exigir AGENTS.md remoto ou uma pasta preparada. Não use trechos antigos de busca como prova de suspensão atual.
 
-Identifique sistema, Premiere, Node e CLI Codex. Se já houver MCP do Premiere funcional, reaproveite-o. Para instalação nova, use o pacote 1.3.2:
-https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-setup-1.3.2.zip
-SHA-256: 3e664bbfb29cc3f57333ca05cc37ffd19e93fffdb1af641b53c3074894cd9f23
+Identifique sistema, Premiere, Node e CLI Codex. Se já houver MCP do Premiere funcional, reaproveite-o. Para instalação nova, use o pacote 1.3.3:
+https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-setup-1.3.3.zip
+SHA-256: 5170b2ffd621e1200508a18f59e0c697570062e5c3fb939f269b36732f7e05cc
 
 Antes de baixar, confira espaço para preparação e dependências. Se faltar espaço, proponha uma pasta em outro disco; não apague arquivos. Baixe pelo terminal com as permissões normais. Se houver erro TLS, diagnostique certificados, proxy e relógio, sem desativar a validação. Respeite bloqueios explícitos de segurança.
 
@@ -15,8 +15,16 @@ Confira o hash, extraia numa pasta nova e leia COMO-CONDUZIR.txt, install.mjs e 
 
 Na pasta extraída, execute node install.mjs --preflight --root CAMINHO_ESCOLHIDO --codex CAMINHO_DA_CLI. Depois das verificações, execute o mesmo comando sem --preflight. Substitua pelos caminhos reais deste computador. Não instale na conta restrita do agente, não contorne permissões e não sobrescreva instalação anterior. Faça backup das configurações alteradas. Não atualize o Premiere nem use APIs pagas sem autorização.
 
-Confirme somente dependências, catálogo e conexão real usando doctor.mjs e connection.mjs --connect na raiz instalada, com seu Node. Se necessário, oriente abrir Janela > Extensões > MCP Bridge (CEP) e reiniciar o Premiere após salvar o trabalho. Não edite, importe mídia, transcreva, renderize ou salve projetos para testar. Sem projeto aberto, informe isso separadamente da conexão. Reabrir o Codex pode ser necessário para carregar o MCP.
+Confirme somente dependências, catálogo e conexão real usando doctor.mjs e connection.mjs --connect na raiz instalada, com seu Node. Antes de orientar Janela > Extensões, confira se há um projeto aberto. Após iniciar ou reiniciar o Premiere, se estiver na tela inicial, peça ao aluno abrir seu projeto em Recentes ou Arquivo > Abrir projeto. Se ele não tiver projeto, explique como criar um projeto vazio caso queira; não imponha material nem edição de teste. Só depois oriente Janela > Extensões > MCP Bridge (CEP), mantendo o painel aberto e clicando em Start Bridge apenas se necessário. Antes de reiniciar, peça salvar alterações pendentes e aguarde a confirmação. Dê uma ação manual por vez. Não edite, importe mídia, transcreva, renderize ou salve projetos para testar. Sem projeto aberto, informe isso separadamente da conexão. Reabrir o Codex pode ser necessário para carregar o MCP.
 
-REGRA OBRIGATÓRIA AO ENCONTRAR UM PROBLEMA: não termine apenas apontando o erro. Diagnostique e apresente uma solução concreta em linguagem simples. Execute as correções que já estiverem autorizadas e confira o resultado. Se a resposta terminar com um problema ainda pendente, explique o que propõe fazer, qualquer participação necessária e finalize exatamente com a pergunta: “Posso resolver isso pra você?”. A pergunta deve corresponder a uma ação possível; não prometa contornar bloqueios de segurança. Depois da autorização, execute, confira e retome a preparação. Se tudo já estiver concluído, informe o resultado e o próximo passo de uso, sem inventar um problema ou pedir autorização de novo.
 
-Use ferramentas locais quando possível. Responda perguntas e continue o trabalho autorizado. Ao finalizar, apresente o próximo passo e uma conclusão simples distinguindo instalado, conectado e pendente.
+REGRA DE CONDUÇÃO E ENCERRAMENTO: explique o estado em linguagem simples e continue as ações já autorizadas, sem pedir autorização novamente. Use terminal e ferramentas locais quando possível. Responda perguntas sem abandonar o trabalho.
+
+Somente quando existir um problema real cuja correção precise de uma nova autorização, explique primeiro a causa, a correção concreta e o que será alterado. Encerre a resposta com a pergunta abaixo em título e negrito, seguida da resposta sugerida, sem conteúdo técnico depois:
+
+### **Quer que eu resolva isso pra você?**
+Responda **“Sim, pode resolver”** para eu continuar.
+
+Se faltar apenas uma ação manual do aluno, peça somente essa ação e a confirmação correspondente: abrir um projeto, abrir o painel ou salvar antes de reiniciar. Não acrescente a pergunta genérica nesses casos. Se a correção já estiver autorizada, execute e verifique. Se estiver tudo funcionando, confirme o resultado e o próximo passo de uso, sem oferecer uma correção desnecessária. Respeite bloqueios de segurança; a pergunta não autoriza contorná-los.
+
+Ao finalizar, apresente uma conclusão simples distinguindo instalado, conectado e pendente, antes de eventual chamada final.
