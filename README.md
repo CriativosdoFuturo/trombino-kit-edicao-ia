@@ -2,7 +2,7 @@
 
 **Criativos do Futuro · Edição única 2.1.4 · 22/09/2026**
 
-> **Premiere: instalador do curso suspenso — atualização de 02/10/2026.** Os ZIPs do instalador foram retirados da versão atual deste repositório enquanto o alerta é investigado. Não instale cópias antigas nem contorne alertas do antivírus. Para essa etapa do curso, procure o suporte. Esta suspensão é do instalador de integração, não do aplicativo Adobe Premiere nem do kit HyperFrames.
+> **Premiere: [copie este link no Codex e peça “Prepare para eu usar”](./INSTALAR-PREMIERE.md).** O fluxo conduz a instalação e confirma a conexão, sem edição de teste. Os instaladores antigos continuam retirados; use a entrada atual.
 
 ## Um único kit para acompanhar as aulas
 
@@ -33,13 +33,13 @@ Se já usa o kit, extraia em outra pasta e preserve projetos, mídias e configur
 
 Um vídeo renderizado pode ser importado no editor, mas não vira texto e keyframes nativos automaticamente. A transcrição local não vem completamente instalada neste kit. O script herdado de transcrição usa ElevenLabs e não é necessário para o teste sintético; não utilize serviços pagos sem autorização.
 
-## Estado do instalador MCP do Premiere
+## Preparar o MCP do Premiere
 
-**Instalação suspensa — alerta em investigação.** O Defender detectou `Trojan:Script/Ulthar.A!ml` em um download do instalador do Premiere. Não há confirmação de falso positivo nesta publicação. Não instale nem libere os ZIPs `premiere-mcp-instalador-*`; não desative proteções nem crie exclusões.
+Use **[INSTALAR-PREMIERE.md](./INSTALAR-PREMIERE.md)** como único endereço para o aluno. Não é necessário escolher ZIP ou versão: o Codex lê a orientação, reaproveita uma instalação funcional ou executa o instalador apropriado e verifica dependências, catálogo e conexão. Abrir o painel da Adobe e confirmar permissões ainda pode exigir participação do aluno.
 
-Em 02/10/2026, foram retirados de `main` os ZIPs `latest`, `v1.0.0`, `v1.1.0`, `v1.2.0` e `v1.2.1`, junto com seus arquivos `.sha256`. O histórico Git foi preservado para rastreabilidade; os arquivos encontrados nele não são uma rota de instalação liberada. A descrição da aula MCP também foi corrigida para retirar a indicação de download. Não há novo instalador liberado nesta revisão.
+O fluxo 1.3.0 preserva instalações anteriores, configura somente o Codex e separa “instalado” de “conectado”. O servidor e seu catálogo de transcrição responderam nesta revisão; a instalação completa no host ficou pendente por bloqueio de gravação, e macOS não foi validado. O verificador precisa confirmar a conexão real no computador antes de declarar pronto. Não foi executada edição de teste.
 
-Essa suspensão refere-se ao instalador do Premiere; o kit de animações é outro pacote. Não representa certificação universal de segurança ou compatibilidade deste kit. Se houver bloqueio, registre e investigue a detecção.
+Os arquivos antigos `premiere-mcp-instalador-*` permanecem retirados de `main`, com histórico preservado. A última leitura da amostra anterior na Microsoft mostrou **No malware detected** em Cloud e Client, com parecer final **Pending**. Esse resultado não certifica a nova versão. Não contorne alertas nem desative proteções.
 
 ## Custos e validação
 
