@@ -1,6 +1,12 @@
 # Preparar o Premiere para editar com o Codex
 
-Este é o endereço único do Premiere no curso Trombino / Criativos do Futuro. Cole este link no **Codex instalado no mesmo computador do Premiere** e peça: **“Prepare para eu usar.”** O agente conduz a preparação; você não precisa escolher versões nem copiar comandos de terminal.
+**Estado em 02/10/2026: fluxo atual 1.3.1 publicado para preparação e checagem.** A retirada registrada no histórico se refere aos ZIPs antigos `premiere-mcp-instalador-*`. A instalação completa e a conexão da versão atual ainda devem ser confirmadas no computador; não há certificação de todas as versões do Premiere.
+
+**Leitura direta, sem a interface do GitHub:** https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/INSTALAR-PREMIERE.md
+
+Este arquivo é autossuficiente como orientação de instalação. Não exige um AGENTS.md remoto ou uma pasta local já preparada. Se a página `/blob/main/` não abrir, leia o endereço direto acima. Se ambos falharem, informe o erro de acesso; não conclua que o fluxo atual está suspenso apenas com base em um trecho antigo de busca. Um alerta real de segurança sobre o arquivo atual continua exigindo interrupção e diagnóstico.
+
+Este é o endereço único do Premiere no curso Trombino / Criativos do Futuro. Cole este link no **Codex instalado no mesmo computador do Premiere** junto com o **PROMPT DA PRIMEIRA TENTATIVA** da aula. O agente conduz a preparação; você não precisa escolher versões nem copiar comandos de terminal.
 
 O Premiere precisa estar instalado e licenciado. Abrir o painel da Adobe, confirmar permissões do sistema e, quando necessário, reabrir o Codex ainda podem exigir sua participação. Nenhuma edição de teste é necessária. A primeira instalação baixa aproximadamente 550 MB de dependências e modelo de voz.
 
@@ -18,11 +24,16 @@ Objetivo: preparar a conexão com o Premiere e a transcrição local, verificar 
 
 ### 2. Instalação nova
 
+A versão 1.3.1 detecta as contas restritas `codexsandboxoffline`/`codexsandboxonline` antes de baixar ou instalar. O painel Adobe precisa ser registrado na conta do usuário do Premiere. Se aparecer `RESTRICTED_EXECUTION`, use somente o mecanismo de execução autorizado disponibilizado pelo cliente. Se ele não estiver disponível, entregue o script já revisado ao usuário para execução manual na própria conta. Não altere ACLs, proteções ou políticas para contornar o bloqueio. Não repita pedidos de acesso a pastas esperando que isso troque a conta de execução.
+
+Antes dos downloads, o instalador também verifica a gravação nos destinos e a abertura da configuração existente sem modificar seu conteúdo. Esses checks não substituem a confirmação posterior de conexão.
+
+
 Use exclusivamente os arquivos deste repositório:
 
 - Windows: [instalar-premiere.ps1](./instalar-premiere.ps1).
 - Mac: [instalar-premiere-mac.sh](./instalar-premiere-mac.sh).
-- Código completo: [premiere-setup-1.3.0.zip](./premiere-setup-1.3.0.zip), com [SHA-256](./premiere-setup-1.3.0.sha256).
+- Código completo: [premiere-setup-1.3.1.zip](./premiere-setup-1.3.1.zip), com [SHA-256](./premiere-setup-1.3.1.sha256).
 
 Baixe o script pelo botão Raw ou por `raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/`. Leia-o antes de executar. O bootstrap confere o SHA-256 do pacote antes de extrair e executar; as dependências Windows e o modelo também têm hashes fixados. Reuse Node 20+ existente, se funcionar; caso contrário o bootstrap obtém o Node oficial.
 
@@ -48,7 +59,7 @@ Finalize com: **próximo passo para o aluno** e uma **conclusão curta**, distin
 
 ## Versão e histórico
 
-Fluxo 1.3.0, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
+Fluxo 1.3.1, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
 
 Nesta revisão, o servidor real iniciou por stdio e disponibilizou o catálogo e o schema da transcrição. Isso não constitui teste de edição. A instalação completa e a conexão precisam ser confirmadas na máquina pelo verificador acima; não são presumidas.
 
