@@ -2,6 +2,8 @@
 
 **Criativos do Futuro · Edição única 2.1.4 · 22/09/2026**
 
+> **Premiere: instalador do curso suspenso — atualização de 02/10/2026.** Os ZIPs do instalador foram retirados da versão atual deste repositório enquanto o alerta é investigado. Não instale cópias antigas nem contorne alertas do antivírus. Para essa etapa do curso, procure o suporte. Esta suspensão é do instalador de integração, não do aplicativo Adobe Premiere nem do kit HyperFrames.
+
 ## Um único kit para acompanhar as aulas
 
 ### [BAIXAR KIT TROMBINO (.zip)](https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/trombino-kit-edicao-ia.zip)
@@ -33,7 +35,9 @@ Um vídeo renderizado pode ser importado no editor, mas não vira texto e keyfra
 
 ## Estado do instalador MCP do Premiere
 
-**Instalação suspensa — alerta em investigação.** O Defender detectou `Trojan:Script/Ulthar.A!ml` em um download do instalador do Premiere. Não há confirmação de falso positivo nesta publicação. Não instale nem libere os ZIPs `premiere-mcp-instalador-*`; não desative proteções nem crie exclusões. Os arquivos históricos permanecem no repositório, mas não são uma rota liberada.
+**Instalação suspensa — alerta em investigação.** O Defender detectou `Trojan:Script/Ulthar.A!ml` em um download do instalador do Premiere. Não há confirmação de falso positivo nesta publicação. Não instale nem libere os ZIPs `premiere-mcp-instalador-*`; não desative proteções nem crie exclusões.
+
+Em 02/10/2026, foram retirados de `main` os ZIPs `latest`, `v1.0.0`, `v1.1.0`, `v1.2.0` e `v1.2.1`, junto com seus arquivos `.sha256`. O histórico Git foi preservado para rastreabilidade; os arquivos encontrados nele não são uma rota de instalação liberada. A descrição da aula MCP também foi corrigida para retirar a indicação de download. Não há novo instalador liberado nesta revisão.
 
 Essa suspensão refere-se ao instalador do Premiere; o kit de animações é outro pacote. Não representa certificação universal de segurança ou compatibilidade deste kit. Se houver bloqueio, registre e investigue a detecção.
 
