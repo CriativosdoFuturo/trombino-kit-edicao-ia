@@ -13,8 +13,8 @@ if [[ -z "$NODE_BIN" ]]; then
  tar -xzf "$STAGE/node.tar.gz" -C "$STAGE"
  NODE_BIN="$STAGE/node-v24.21.0-darwin-$ARCH/bin/node"
 fi
-curl --fail --location --retry 3 'https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/premiere-setup-1.3.3.zip' -o "$STAGE/setup.zip"
-[[ "$(shasum -a 256 "$STAGE/setup.zip" | awk '{print $1}')" == "5170b2ffd621e1200508a18f59e0c697570062e5c3fb939f269b36732f7e05cc" ]] || { echo 'SHA256 divergente; nao executar.'; exit 1; }
+curl --fail --location --retry 3 'https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/premiere-setup-1.3.4.zip' -o "$STAGE/setup.zip"
+[[ "$(shasum -a 256 "$STAGE/setup.zip" | awk '{print $1}')" == "535c12cf087a302fd5f79fa60b63f009ed7cb6f056d07711fc72d96df18817b1" ]] || { echo 'SHA256 divergente; nao executar.'; exit 1; }
 mkdir "$STAGE/setup"; unzip -q "$STAGE/setup.zip" -d "$STAGE/setup"
 "$NODE_BIN" "$STAGE/setup/install.mjs" --codex "$CODEX_BIN"
 ROOT="$HOME/Library/Application Support/CriativosdoFuturo/PremiereMCP"

@@ -2,7 +2,7 @@
 
 **Criativos do Futuro · Edição única 2.1.4 · 22/09/2026**
 
-> **Premiere: [copie este link no Codex junto com o prompt da aula](./INSTALAR-PREMIERE.md).** Use o [prompt completo da primeira tentativa](./PROMPT-PREMIERE.txt), que também permite começar quando a leitura automática do guia falha. A checagem é somente de instalação, conexão e leitura, sem edição de teste. Os instaladores antigos continuam retirados; use a entrada atual.
+> **Premiere: [copie este link no Codex junto com o prompt da aula](./INSTALAR-PREMIERE.md).** Use o [prompt completo da primeira tentativa](./PROMPT-PREMIERE.txt), que também permite começar quando a leitura automática do guia falha. A checagem é somente de instalação, conexão e leitura, sem edição de teste. O endereço antigo “latest” foi recuperado e entrega a versão atual; use o guia como entrada estável para Windows e Mac.
 
 ## Um único kit para acompanhar as aulas
 
@@ -37,11 +37,11 @@ Um vídeo renderizado pode ser importado no editor, mas não vira texto e keyfra
 
 Use **[INSTALAR-PREMIERE.md](./INSTALAR-PREMIERE.md)** como único endereço para o aluno. Não é necessário escolher ZIP ou versão: o Codex lê a orientação, reaproveita uma instalação funcional ou executa o instalador apropriado e verifica dependências, catálogo e conexão. Abrir o painel da Adobe e confirmar permissões ainda pode exigir participação do aluno.
 
-O fluxo 1.3.3 preserva instalações anteriores e mantém a experiência de link + prompt. Inclui painel assinado, as adaptações para CEP 9, certificados do sistema com TLS ativo e opção de outro disco quando faltar espaço. Depois de abrir ou reiniciar o Premiere, o agente orienta abrir um projeto antes de procurar a extensão. A checagem é somente de instalação e conexão, sem edição de teste. Os atendimentos relatados confirmaram conexão e leitura no Premiere 2020 e 2026 com ajustes locais; isso não comprova todas as versões ou operações. O pacote atual passou por verificações locais, sem nova instalação completa; macOS ainda não foi validado. Confira o guia para os limites da validação.
+O fluxo 1.3.4 preserva instalações anteriores e mantém a experiência de link + prompt. Inclui painel assinado, as adaptações para CEP 9, certificados do sistema com TLS ativo e opção de outro disco quando faltar espaço. Depois de abrir ou reiniciar o Premiere, o agente orienta abrir um projeto antes de procurar a extensão. A checagem é somente de instalação e conexão, sem edição de teste. Os atendimentos relatados confirmaram conexão e leitura no Premiere 2020 e 2026 com ajustes locais; isso não comprova todas as versões ou operações. A revisão 1.3.4 corrige os endereços e as orientações, preservando o motor, o instalador e o painel da 1.3.3. No Mac, o agente deve conferir requisitos, realizar a preparação autorizada e verificar a conexão real. A falta de validação nativa anterior é uma limitação do histórico de testes, não uma suspensão do fluxo; ela não dispensa as verificações nem permite prometer sucesso antecipado. Confira o guia para os limites da validação.
 
 **Somente quando houver uma correção pendente que precise de nova autorização**, o agente deve explicar a solução e terminar com a pergunta em destaque: **“Quer que eu resolva isso pra você?”**, seguida de **“Responda ‘Sim, pode resolver’ para eu continuar.”** Se faltar uma ação manual, peça apenas essa ação; se já estiver autorizado, continue; se tudo funcionar, confirme o resultado sem perguntar novamente.
 
-Os arquivos antigos `premiere-mcp-instalador-*` permanecem retirados de `main`, com histórico preservado. A última leitura da amostra anterior na Microsoft mostrou **No malware detected** em Cloud e Client, com parecer final **Pending**. Esse resultado não certifica a nova versão. Não contorne alertas nem desative proteções.
+Os binários antigos permanecem retirados, com histórico preservado. O endereço [premiere-mcp-instalador-latest.zip](./premiere-mcp-instalador-latest.zip) agora entrega uma cópia exata de [premiere-setup-1.3.4.zip](./premiere-setup-1.3.4.zip), com [hash atualizado](./premiere-mcp-instalador-latest.sha256). Endereços antigos com versão fixa continuam retirados; siga o guia atual em caso de 404. Não recupere instaladores antigos do histórico nem ignore divergências de hash. A última leitura da amostra anterior na Microsoft mostrou **No malware detected** em Cloud e Client, com parecer final **Pending**. Esse resultado não certifica a nova versão. Não contorne alertas nem desative proteções.
 
 ## Custos e validação
 

@@ -5,9 +5,17 @@ https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/blob/main/INSTALAR-P
 
 Se a leitura do guia falhar, estas instruções permitem começar sem exigir AGENTS.md remoto ou uma pasta preparada. Não use trechos antigos de busca como prova de suspensão atual.
 
-Identifique sistema, Premiere, Node e CLI Codex. Se já houver MCP do Premiere funcional, reaproveite-o. Para instalação nova, use o pacote 1.3.3:
-https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-setup-1.3.3.zip
-SHA-256: 5170b2ffd621e1200508a18f59e0c697570062e5c3fb939f269b36732f7e05cc
+Se recebeu um link antigo que retorna 404, siga o guia atual e o pacote abaixo; não conclua que a instalação atual foi suspensa. O endereço premiere-mcp-instalador-latest.zip agora entrega esse mesmo pacote. Nunca ignore divergências de hash ou alertas de segurança.
+
+No Mac, a preparação deve continuar no computador do aluno. A falta de uma validação anterior em macOS é uma limitação do histórico de testes, não um erro observado nessa máquina nem uma proibição de instalar. Não encerre o atendimento apenas com “não validado” ou “tentativa assistida”. Confira requisitos, execute a preparação autorizada e confirme a conexão real; não prometa sucesso antes desses resultados.
+
+Antes de instalar no macOS: identifique a versão do sistema, a arquitetura, o Premiere e a CLI Codex; confira se o Node escolhido executa nessa máquina, espaço e permissões. Confira Homebrew em /opt/homebrew/bin/brew (Apple Silicon) ou /usr/local/bin/brew (Intel). FFmpeg e whisper-cpp são preparados pelo Homebrew. Se ele faltar, conduza sua preparação pela documentação oficial https://docs.brew.sh/Installation, lendo o instalador antes e solicitando apenas as ações/permissões realmente necessárias. Faça isso antes de iniciar install.mjs. Não exija que o aluno descubra comandos. Reaproveite uma integração existente antes de instalar outra.
+
+Execute o preflight e, se aprovado, a instalação. Em seguida use doctor.mjs e connection.mjs --connect com o Node da raiz instalada. Se aparecer uma falha concreta, registre o erro e diagnostique a etapa; não substitua o diagnóstico por uma conclusão genérica sobre Mac. Respeite alertas de segurança e permissões. Não remova quarentena nem desative Gatekeeper, antivírus ou TLS para vencer bloqueios. A conexão ainda precisa ser confirmada nesse Mac; não há validação nativa de macOS feita pelo distribuidor nesta revisão.
+
+Identifique sistema, Premiere, Node e CLI Codex. Se já houver MCP do Premiere funcional, reaproveite-o. Para instalação nova, use o pacote 1.3.4:
+https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-setup-1.3.4.zip
+SHA-256: 535c12cf087a302fd5f79fa60b63f009ed7cb6f056d07711fc72d96df18817b1
 
 Antes de baixar, confira espaço para preparação e dependências. Se faltar espaço, proponha uma pasta em outro disco; não apague arquivos. Baixe pelo terminal com as permissões normais. Se houver erro TLS, diagnostique certificados, proxy e relógio, sem desativar a validação. Respeite bloqueios explícitos de segurança.
 

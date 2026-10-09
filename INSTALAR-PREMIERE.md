@@ -1,12 +1,20 @@
 # Preparar o Premiere para editar com o Codex
 
-**Estado em 02/10/2026: fluxo atual 1.3.3 disponível para preparação e checagem de conexão.** Mantém a experiência de copiar este link e o prompt. Inclui o painel assinado e orientação para abrir o projeto antes da extensão. Os ZIPs antigos `premiere-mcp-instalador-*` continuam retirados; essa retirada não suspende o fluxo atual.
+**Estado em 09/10/2026: fluxo atual 1.3.4 disponível para preparação e checagem de conexão.** Mantém a experiência de copiar este link e o prompt. Inclui o painel assinado e orientação para abrir o projeto antes da extensão. O link antigo “latest” agora entrega o pacote atual. Links antigos com versão fixa foram substituídos por este guia; veja a recuperação abaixo.
 
 **Leitura direta, sem a interface do GitHub:** https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/INSTALAR-PREMIERE.md
 
 Este arquivo é autossuficiente como orientação de instalação. Não exige um AGENTS.md remoto ou uma pasta local já preparada. Se a página `/blob/main/` não abrir, leia o endereço direto acima. Se ambos falharem, informe o erro de acesso; não conclua que o fluxo atual está suspenso apenas com base em um trecho antigo de busca. Um alerta real de segurança sobre o arquivo atual continua exigindo interrupção e diagnóstico.
 
 **Se a ferramenta de pesquisa não conseguir ler este guia:** tente a leitura pelo navegador disponível ou baixe somente o texto pelo terminal local, com as permissões normais de rede. Leia o conteúdo antes de executar qualquer comando nele. Não use trechos de busca como substituto do arquivo atual. Se houver bloqueio explícito de segurança ou de política de acesso, respeite-o; não use outro canal para contorná-lo. A ausência de README/AGENTS em uma pasta vazia não impede começar esta preparação.
+
+## Veio de um link antigo da aula?
+
+O endereço estável para novas instruções é este guia: https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/blob/main/INSTALAR-PREMIERE.md . Use-o com o pedido “Prepare para eu usar”, ou com o prompt completo abaixo. O aluno não precisa escolher a versão.
+
+O link `premiere-mcp-instalador-latest.zip` foi recuperado como cópia exata do pacote atual `premiere-setup-1.3.4.zip`, com o mesmo conteúdo e SHA-256. Ele não contém o instalador antigo retirado. Seu `.sha256` acompanha o conteúdo atual. Os endereços antigos com versão fixa (`premiere-mcp-instalador-v1.*`) continuam retirados; se retornarem 404, siga este guia e baixe o pacote atual indicado aqui. Não restaure binários antigos do histórico.
+
+Um 404 de um arquivo retirado não significa que o fluxo atual esteja suspenso. Se um prompt antigo fixar outro hash ou nome, explique a migração para a versão atual e verifique o hash publicado para ela; nunca ignore uma divergência de hash no arquivo escolhido. Havendo alerta real de segurança sobre o pacote atual, interrompa sua execução e diagnostique.
 
 ## Link e prompt para uma conversa nova
 
@@ -54,11 +62,19 @@ Use exclusivamente os arquivos deste repositório:
 
 - Windows: [instalar-premiere.ps1](./instalar-premiere.ps1).
 - Mac: [instalar-premiere-mac.sh](./instalar-premiere-mac.sh).
-- Código completo: [premiere-setup-1.3.3.zip](./premiere-setup-1.3.3.zip), com [SHA-256](./premiere-setup-1.3.3.sha256).
+- Código completo: [premiere-setup-1.3.4.zip](./premiere-setup-1.3.4.zip), com [SHA-256](./premiere-setup-1.3.4.sha256).
 
 Baixe o script pelo botão Raw ou por `raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/`. Leia-o antes de executar. O bootstrap confere o SHA-256 do pacote antes de extrair e executar; as dependências Windows e o modelo também têm hashes fixados. Reuse Node existente com suporte a getCACertificates/setDefaultCACertificates (22.19+ na linha 22, 24.5+ na linha 24), se funcionar; caso contrário o bootstrap obtém o Node oficial.
 
-No Windows execute o script salvo com PowerShell e, se necessário, informe `-CodexPath` e `-NodePath` com os caminhos absolutos encontrados. No Mac execute com `bash`, passando o caminho da CLI Codex como primeiro argumento. O Mac usa Homebrew para FFmpeg e Whisper: se não existir, prepare o Homebrew conforme sua documentação oficial, com as confirmações exigidas, e retome. Não execute um script remoto sem lê-lo. A instalação nativa no Mac ainda não foi validada nesta revisão; confirme cada resultado em vez de prometer compatibilidade universal.
+No Windows execute o script salvo com PowerShell e, se necessário, informe `-CodexPath` e `-NodePath` com os caminhos absolutos encontrados. No Mac execute com `bash`, passando o caminho da CLI Codex como primeiro argumento. O Mac usa Homebrew para FFmpeg e Whisper: se não existir, prepare o Homebrew conforme sua documentação oficial, com as confirmações exigidas, e retome. Não execute um script remoto sem lê-lo. Siga a preparação no Mac descrita a seguir; a falta de validação histórica não exige parar antes de verificar a máquina.
+
+#### Preparação no Mac, passo a passo
+
+No Mac, a preparação deve continuar no computador do aluno. A falta de uma validação anterior em macOS é uma limitação do histórico de testes, não um erro observado nessa máquina nem uma proibição de instalar. Não encerre o atendimento apenas com “não validado” ou “tentativa assistida”. Confira requisitos, execute a preparação autorizada e confirme a conexão real; não prometa sucesso antes desses resultados.
+
+Antes de instalar no macOS: identifique a versão do sistema, a arquitetura, o Premiere e a CLI Codex; confira se o Node escolhido executa nessa máquina, espaço e permissões. Confira Homebrew em /opt/homebrew/bin/brew (Apple Silicon) ou /usr/local/bin/brew (Intel). FFmpeg e whisper-cpp são preparados pelo Homebrew. Se ele faltar, conduza sua preparação pela documentação oficial https://docs.brew.sh/Installation, lendo o instalador antes e solicitando apenas as ações/permissões realmente necessárias. Faça isso antes de iniciar install.mjs. Não exija que o aluno descubra comandos. Reaproveite uma integração existente antes de instalar outra.
+
+Execute o preflight e, se aprovado, a instalação. Em seguida use doctor.mjs e connection.mjs --connect com o Node da raiz instalada. Se aparecer uma falha concreta, registre o erro e diagnostique a etapa; não substitua o diagnóstico por uma conclusão genérica sobre Mac. Respeite alertas de segurança e permissões. Não remova quarentena nem desative Gatekeeper, antivírus ou TLS para vencer bloqueios. A conexão ainda precisa ser confirmada nesse Mac; não há validação nativa de macOS feita pelo distribuidor nesta revisão.
 
 O instalador cria os arquivos em `LocalAppData/CriativosdoFuturo/PremiereMCP` (Windows) ou `~/Library/Application Support/CriativosdoFuturo/PremiereMCP` (Mac), instala o painel CEP por usuário e registra apenas `premiere_pro_trombino` pelo comando oficial `codex mcp add`. Faz backup do TOML antes dessa alteração. Não altera Claude, VS Code nem desabilita outros MCPs. O painel inclui assinatura do distribuidor, sem instalar certificados no sistema nem exigir que o aluno assine arquivos. Preserve instalações funcionais. O painel CEP local usa a configuração Adobe `PlayerDebugMode`; os valores anteriores ficam registrados para recuperação. As proteções do sistema operacional permanecem ativas.
 
@@ -80,14 +96,18 @@ Finalize com: **próximo passo para o aluno** e uma **conclusão curta**, distin
 
 ## Versão e histórico
 
-Fluxo 1.3.3, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
+Fluxo 1.3.4, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
 
 Nesta revisão, o servidor real iniciou por stdio e disponibilizou o catálogo e o schema da transcrição. Isso não constitui teste de edição. A instalação completa e a conexão precisam ser confirmadas na máquina pelo verificador acima; não são presumidas.
 
-Os ZIPs antigos `premiere-mcp-instalador-*` continuam retirados da versão atual do repositório. A análise Microsoft da amostra anterior passou a mostrar **No malware detected** em Cloud e Client; a determinação final ainda estava **Pending** na consulta de 02/10/2026. Esse resultado é referente àquela amostra, não certifica esta versão nem autoriza ignorar um alerta novo.
+Os binários antigos retirados não foram republicados. Apenas o nome estável `premiere-mcp-instalador-latest.zip` foi recuperado para entregar a distribuição atual, com hash atualizado; arquivos antigos com versão fixa continuam retirados. A análise Microsoft da amostra anterior passou a mostrar **No malware detected** em Cloud e Client; a determinação final ainda estava **Pending** na consulta de 02/10/2026. Esse resultado é referente àquela amostra, não certifica esta versão nem autoriza ignorar um alerta novo.
 
 Referências: [configuração oficial do Codex](https://learn.chatgpt.com/docs/extend/mcp?surface=cli), [MCP original](https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP).
 
 ## Alterações desta atualização
 
 Painel assinado com código idêntico ao da 1.3.2; orientação de projeto antes da extensão; pergunta de correção somente quando apropriada; relatório de conexão atualizado também em falha. Assinatura e hashes conferidos localmente; não houve nova instalação completa desta versão nem edição de teste. Os atendimentos relatados confirmaram conexão e leitura no Premiere 2020 e 2026, com ajustes locais. Isso não certifica todas as versões nem todas as operações. Detalhes da assinatura e limites da verificação estão em THIRD_PARTY_NOTICES.md dentro do pacote.
+
+### Revisão de distribuição em 09/10/2026 — 1.3.4
+
+Recupera o endereço latest e esclarece a continuação no Mac. O motor MCP, o instalador e o painel assinado são os mesmos da 1.3.3; apenas orientações e identificação da versão foram atualizadas. Pacote, hashes, sintaxe e preservação dos arquivos de execução foram conferidos localmente. Não foi feita instalação nativa no Mac nem edição de teste. A confirmação de conexão é feita no computador do aluno, pelo fluxo acima.
