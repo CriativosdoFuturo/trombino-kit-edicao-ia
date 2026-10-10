@@ -13,15 +13,15 @@ Antes de instalar no macOS: identifique a versão do sistema, a arquitetura, o P
 
 Execute o preflight e, se aprovado, a instalação. Em seguida use doctor.mjs e connection.mjs --connect com o Node da raiz instalada. Se aparecer uma falha concreta, registre o erro e diagnostique a etapa; não substitua o diagnóstico por uma conclusão genérica sobre Mac. Respeite alertas de segurança e permissões. Não remova quarentena nem desative Gatekeeper, antivírus ou TLS para vencer bloqueios. A conexão ainda precisa ser confirmada nesse Mac; não há validação nativa de macOS feita pelo distribuidor nesta revisão.
 
-Identifique sistema, Premiere, Node e CLI Codex. Se já houver MCP do Premiere funcional, reaproveite-o. Para instalação nova, use o pacote 1.3.4:
-https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-setup-1.3.4.zip
-SHA-256: 535c12cf087a302fd5f79fa60b63f009ed7cb6f056d07711fc72d96df18817b1
+Identifique sistema, Premiere, Node e CLI Codex. Se já houver MCP do Premiere funcional, reaproveite-o. Para instalação nova, use o pacote 1.3.5:
+https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/raw/refs/heads/main/premiere-setup-1.3.5.zip
+SHA-256: bcfbd9c31217c3b89e9d0b06839ce36799a985afcfc9534c294495dca6dc20a3
 
 Antes de baixar, confira espaço para preparação e dependências. Se faltar espaço, proponha uma pasta em outro disco; não apague arquivos. Baixe pelo terminal com as permissões normais. Se houver erro TLS, diagnostique certificados, proxy e relógio, sem desativar a validação. Respeite bloqueios explícitos de segurança.
 
 Confira o hash, extraia numa pasta nova e leia COMO-CONDUZIR.txt, install.mjs e seus auxiliares antes de executar. Use Node com suporte aos certificados do sistema (22.19+ na linha 22 ou 24.5+ na linha 24); se faltar, obtenha versão compatível da fonte oficial e confira sua integridade. O instalador aplica os certificados automaticamente.
 
-Na pasta extraída, execute node install.mjs --preflight --root CAMINHO_ESCOLHIDO --codex CAMINHO_DA_CLI. Depois das verificações, execute o mesmo comando sem --preflight. Substitua pelos caminhos reais deste computador. Não instale na conta restrita do agente, não contorne permissões e não sobrescreva instalação anterior. Faça backup das configurações alteradas. Não atualize o Premiere nem use APIs pagas sem autorização.
+Para instalação nova, na pasta extraída, execute node install.mjs --preflight --root CAMINHO_ESCOLHIDO --codex CAMINHO_DA_CLI. Depois das verificações, execute o mesmo comando sem --preflight. Substitua pelos caminhos reais deste computador. Não instale na conta restrita do agente, não contorne permissões e não sobrescreva instalação anterior. Faça backup das configurações alteradas. Não atualize o Premiere nem use APIs pagas sem autorização.
 
 Confirme somente dependências, catálogo e conexão real usando doctor.mjs e connection.mjs --connect na raiz instalada, com seu Node. Antes de orientar Janela > Extensões, confira se há um projeto aberto. Após iniciar ou reiniciar o Premiere, se estiver na tela inicial, peça ao aluno abrir seu projeto em Recentes ou Arquivo > Abrir projeto. Se ele não tiver projeto, explique como criar um projeto vazio caso queira; não imponha material nem edição de teste. Só depois oriente Janela > Extensões > MCP Bridge (CEP), mantendo o painel aberto e clicando em Start Bridge apenas se necessário. Antes de reiniciar, peça salvar alterações pendentes e aguarde a confirmação. Dê uma ação manual por vez. Não edite, importe mídia, transcreva, renderize ou salve projetos para testar. Sem projeto aberto, informe isso separadamente da conexão. Reabrir o Codex pode ser necessário para carregar o MCP.
 
@@ -36,3 +36,16 @@ Responda **“Sim, pode resolver”** para eu continuar.
 Se faltar apenas uma ação manual do aluno, peça somente essa ação e a confirmação correspondente: abrir um projeto, abrir o painel ou salvar antes de reiniciar. Não acrescente a pergunta genérica nesses casos. Se a correção já estiver autorizada, execute e verifique. Se estiver tudo funcionando, confirme o resultado e o próximo passo de uso, sem oferecer uma correção desnecessária. Respeite bloqueios de segurança; a pergunta não autoriza contorná-los.
 
 Ao finalizar, apresente uma conclusão simples distinguindo instalado, conectado e pendente, antes de eventual chamada final.
+
+
+### Recuperar uma instalação interrompida (Windows)
+
+Não peça reinstalação a quem já está conectado. Não apague pastas para vencer EXISTING_INSTALLATION. A versão 1.3.5 inclui uma recuperação limitada ao caso em que as dependências e o painel já foram copiados, mas o MCP ainda não foi registrado. Ela não atualiza instalações completas nem substitui painéis personalizados.
+
+1. Identifique a conta real, os caminhos e a etapa que falhou. Se houve erro de rede, compare a URL exata e a resolução do host com as permissões da sessão. “Host não conhecido” não prova link removido nem bloqueio de antivírus. Obtenha permissões pelo mecanismo normal do cliente. Download pelo navegador é opção para falha técnica, nunca para contornar bloqueio explícito. Preserve TLS e confira o hash. Não mude DNS, proxy, firewall ou política do PowerShell automaticamente.
+2. Extraia o pacote atual em uma pasta nova. Leia install.mjs, preflight.mjs e recovery.mjs. O Node pode executar install.mjs diretamente; não é necessário liberar arquivos .ps1 nem usar ExecutionPolicy Bypass. Se o agente não tiver execução autorizada na conta do Premiere, prepare a operação revisada para o aluno executar nessa conta. Não recomende administrador como solução genérica.
+3. Na pasta extraída, use o Node original confiável da preparação e os caminhos reais: `node install.mjs --resume --preflight --root RAIZ_EXISTENTE --codex CLI_EXISTENTE`. A recuperação confere o servidor e painel byte a byte contra o pacote, o modelo, FFmpeg e Whisper contra seus caches verificados, a identidade do runtime, os backups e o acesso ao Registro. Uma instalação em andamento, concluída, com MCP já registrado ou arquivos divergentes exige diagnóstico específico; não remova a guarda. A conferência pode criar apenas arquivos temporários de validação e probes de acesso, sem alterar painel, Registro ou configuração do MCP.
+4. Se a verificação aprovar e a conclusão da instalação já estiver autorizada, execute o mesmo comando sem `--preflight`. Conclua somente as configurações CEP e o registro do MCP. O backup original permanece intacto; novos backups têm nomes exclusivos. Não execute duas instalações simultâneas.
+5. Execute doctor.mjs e connection.mjs --connect na raiz instalada. Abra um projeto antes do painel. Confirme conexão e leitura sem fazer edição de teste.
+
+Em instalações novas, o preflight pede ao Windows acesso às chaves HKCU/Adobe sem criar chaves nem alterar valores, antes dos downloads de dependências. Se o acesso for negado, ele encerra cedo com REGISTRY_PERMISSION_REQUIRED. Isso não garante que uma política não mude depois: falhas posteriores continuam sendo informadas. A recuperação automática não cobre todas as falhas possíveis nem o macOS nesta revisão.

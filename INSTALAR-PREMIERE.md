@@ -1,6 +1,6 @@
 # Preparar o Premiere para editar com o Codex
 
-**Estado em 09/10/2026: fluxo atual 1.3.4 disponível para preparação e checagem de conexão.** Mantém a experiência de copiar este link e o prompt. Inclui o painel assinado e orientação para abrir o projeto antes da extensão. O link antigo “latest” agora entrega o pacote atual. Links antigos com versão fixa foram substituídos por este guia; veja a recuperação abaixo.
+**Estado em 10/10/2026: fluxo atual 1.3.5 disponível para preparação e checagem de conexão.** Mantém a experiência de copiar este link e o prompt. Inclui o painel assinado e orientação para abrir o projeto antes da extensão. O link antigo “latest” agora entrega o pacote atual. Links antigos com versão fixa foram substituídos por este guia; veja a recuperação abaixo.
 
 **Leitura direta, sem a interface do GitHub:** https://raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/INSTALAR-PREMIERE.md
 
@@ -12,7 +12,7 @@ Este arquivo é autossuficiente como orientação de instalação. Não exige um
 
 O endereço estável para novas instruções é este guia: https://github.com/CriativosdoFuturo/trombino-kit-edicao-ia/blob/main/INSTALAR-PREMIERE.md . Use-o com o pedido “Prepare para eu usar”, ou com o prompt completo abaixo. O aluno não precisa escolher a versão.
 
-O link `premiere-mcp-instalador-latest.zip` foi recuperado como cópia exata do pacote atual `premiere-setup-1.3.4.zip`, com o mesmo conteúdo e SHA-256. Ele não contém o instalador antigo retirado. Seu `.sha256` acompanha o conteúdo atual. Os endereços antigos com versão fixa (`premiere-mcp-instalador-v1.*`) continuam retirados; se retornarem 404, siga este guia e baixe o pacote atual indicado aqui. Não restaure binários antigos do histórico.
+O link `premiere-mcp-instalador-latest.zip` foi recuperado como cópia exata do pacote atual `premiere-setup-1.3.5.zip`, com o mesmo conteúdo e SHA-256. Ele não contém o instalador antigo retirado. Seu `.sha256` acompanha o conteúdo atual. Os endereços antigos com versão fixa (`premiere-mcp-instalador-v1.*`) continuam retirados; se retornarem 404, siga este guia e baixe o pacote atual indicado aqui. Não restaure binários antigos do histórico.
 
 Um 404 de um arquivo retirado não significa que o fluxo atual esteja suspenso. Se um prompt antigo fixar outro hash ou nome, explique a migração para a versão atual e verifique o hash publicado para ela; nunca ignore uma divergência de hash no arquivo escolhido. Havendo alerta real de segurança sobre o pacote atual, interrompa sua execução e diagnostique.
 
@@ -62,11 +62,11 @@ Use exclusivamente os arquivos deste repositório:
 
 - Windows: [instalar-premiere.ps1](./instalar-premiere.ps1).
 - Mac: [instalar-premiere-mac.sh](./instalar-premiere-mac.sh).
-- Código completo: [premiere-setup-1.3.4.zip](./premiere-setup-1.3.4.zip), com [SHA-256](./premiere-setup-1.3.4.sha256).
+- Código completo: [premiere-setup-1.3.5.zip](./premiere-setup-1.3.5.zip), com [SHA-256](./premiere-setup-1.3.5.sha256).
 
 Baixe o script pelo botão Raw ou por `raw.githubusercontent.com/CriativosdoFuturo/trombino-kit-edicao-ia/main/`. Leia-o antes de executar. O bootstrap confere o SHA-256 do pacote antes de extrair e executar; as dependências Windows e o modelo também têm hashes fixados. Reuse Node existente com suporte a getCACertificates/setDefaultCACertificates (22.19+ na linha 22, 24.5+ na linha 24), se funcionar; caso contrário o bootstrap obtém o Node oficial.
 
-No Windows execute o script salvo com PowerShell e, se necessário, informe `-CodexPath` e `-NodePath` com os caminhos absolutos encontrados. No Mac execute com `bash`, passando o caminho da CLI Codex como primeiro argumento. O Mac usa Homebrew para FFmpeg e Whisper: se não existir, prepare o Homebrew conforme sua documentação oficial, com as confirmações exigidas, e retome. Não execute um script remoto sem lê-lo. Siga a preparação no Mac descrita a seguir; a falta de validação histórica não exige parar antes de verificar a máquina.
+No Windows, prefira o pacote verificado e `node install.mjs` quando Node compatível já existir; isso não exige executar um .ps1. O bootstrap PowerShell é opcional, somente quando permitido pela política existente; nunca use Bypass. Ao usar o bootstrap, informe `-CodexPath` e `-NodePath` com os caminhos absolutos encontrados. No Mac execute com `bash`, passando o caminho da CLI Codex como primeiro argumento. O Mac usa Homebrew para FFmpeg e Whisper: se não existir, prepare o Homebrew conforme sua documentação oficial, com as confirmações exigidas, e retome. Não execute um script remoto sem lê-lo. Siga a preparação no Mac descrita a seguir; a falta de validação histórica não exige parar antes de verificar a máquina.
 
 #### Preparação no Mac, passo a passo
 
@@ -79,6 +79,18 @@ Execute o preflight e, se aprovado, a instalação. Em seguida use doctor.mjs e 
 O instalador cria os arquivos em `LocalAppData/CriativosdoFuturo/PremiereMCP` (Windows) ou `~/Library/Application Support/CriativosdoFuturo/PremiereMCP` (Mac), instala o painel CEP por usuário e registra apenas `premiere_pro_trombino` pelo comando oficial `codex mcp add`. Faz backup do TOML antes dessa alteração. Não altera Claude, VS Code nem desabilita outros MCPs. O painel inclui assinatura do distribuidor, sem instalar certificados no sistema nem exigir que o aluno assine arquivos. Preserve instalações funcionais. O painel CEP local usa a configuração Adobe `PlayerDebugMode`; os valores anteriores ficam registrados para recuperação. As proteções do sistema operacional permanecem ativas.
 
 Se encontrar instalação anterior (`EXISTING_INSTALLATION`), preserve-a e diagnostique. Não exclua pastas para vencer essa proteção. Se houver bloqueio de segurança, obtenha nome da detecção, caminho e hash sem executar o arquivo bloqueado e encaminhe ao suporte. Se houver falha de download, certificado ou permissão, corrija a causa concreta pelos meios normais; não repita a instalação indefinidamente.
+
+### Recuperar uma instalação interrompida (Windows)
+
+Não peça reinstalação a quem já está conectado. Não apague pastas para vencer EXISTING_INSTALLATION. A versão 1.3.5 inclui uma recuperação limitada ao caso em que as dependências e o painel já foram copiados, mas o MCP ainda não foi registrado. Ela não atualiza instalações completas nem substitui painéis personalizados.
+
+1. Identifique a conta real, os caminhos e a etapa que falhou. Se houve erro de rede, compare a URL exata e a resolução do host com as permissões da sessão. “Host não conhecido” não prova link removido nem bloqueio de antivírus. Obtenha permissões pelo mecanismo normal do cliente. Download pelo navegador é opção para falha técnica, nunca para contornar bloqueio explícito. Preserve TLS e confira o hash. Não mude DNS, proxy, firewall ou política do PowerShell automaticamente.
+2. Extraia o pacote atual em uma pasta nova. Leia install.mjs, preflight.mjs e recovery.mjs. O Node pode executar install.mjs diretamente; não é necessário liberar arquivos .ps1 nem usar ExecutionPolicy Bypass. Se o agente não tiver execução autorizada na conta do Premiere, prepare a operação revisada para o aluno executar nessa conta. Não recomende administrador como solução genérica.
+3. Na pasta extraída, use o Node original confiável da preparação e os caminhos reais: `node install.mjs --resume --preflight --root RAIZ_EXISTENTE --codex CLI_EXISTENTE`. A recuperação confere o servidor e painel byte a byte contra o pacote, o modelo, FFmpeg e Whisper contra seus caches verificados, a identidade do runtime, os backups e o acesso ao Registro. Uma instalação em andamento, concluída, com MCP já registrado ou arquivos divergentes exige diagnóstico específico; não remova a guarda. A conferência pode criar apenas arquivos temporários de validação e probes de acesso, sem alterar painel, Registro ou configuração do MCP.
+4. Se a verificação aprovar e a conclusão da instalação já estiver autorizada, execute o mesmo comando sem `--preflight`. Conclua somente as configurações CEP e o registro do MCP. O backup original permanece intacto; novos backups têm nomes exclusivos. Não execute duas instalações simultâneas.
+5. Execute doctor.mjs e connection.mjs --connect na raiz instalada. Abra um projeto antes do painel. Confirme conexão e leitura sem fazer edição de teste.
+
+Em instalações novas, o preflight pede ao Windows acesso às chaves HKCU/Adobe sem criar chaves nem alterar valores, antes dos downloads de dependências. Se o acesso for negado, ele encerra cedo com REGISTRY_PERMISSION_REQUIRED. Isso não garante que uma política não mude depois: falhas posteriores continuam sendo informadas. A recuperação automática não cobre todas as falhas possíveis nem o macOS nesta revisão.
 
 ### 3. Confirmar que está ligado, sem editar
 
@@ -96,7 +108,7 @@ Finalize com: **próximo passo para o aluno** e uma **conclusão curta**, distin
 
 ## Versão e histórico
 
-Fluxo 1.3.4, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
+Fluxo 1.3.5, baseado em `adobe-premiere-pro-mcp` 1.2.8 (CEP), com transcrição local do curso. Não é o PPMCP UXP experimental usado em um atendimento individual. As correções experimentais daquele atendimento não foram incorporadas a este pacote.
 
 Nesta revisão, o servidor real iniciou por stdio e disponibilizou o catálogo e o schema da transcrição. Isso não constitui teste de edição. A instalação completa e a conexão precisam ser confirmadas na máquina pelo verificador acima; não são presumidas.
 
@@ -111,3 +123,9 @@ Painel assinado com código idêntico ao da 1.3.2; orientação de projeto antes
 ### Revisão de distribuição em 09/10/2026 — 1.3.4
 
 Recupera o endereço latest e esclarece a continuação no Mac. O motor MCP, o instalador e o painel assinado são os mesmos da 1.3.3; apenas orientações e identificação da versão foram atualizadas. Pacote, hashes, sintaxe e preservação dos arquivos de execução foram conferidos localmente. Não foi feita instalação nativa no Mac nem edição de teste. A confirmação de conexão é feita no computador do aluno, pelo fluxo acima.
+
+### Revisão 1.3.5 — 10/10/2026
+
+Corrige quebras de linha do bootstrap Mac para LF, antecipa a verificação de acesso ao Registro no Windows e adiciona --resume para a preparação parcial descrita acima. Mantém motor MCP, dependências fixadas e painel assinado byte a byte. Testes simulados cobriram recuperação, preservação dos backups, arquivos modificados, modelo divergente, instalação em andamento, falta de permissão e instalação concluída. Esses testes não substituem uma instalação real no computador do aluno; não houve nova instalação nativa no Mac nesta revisão. Nenhuma edição de teste é exigida.
+
+Para os demais editores, leia [COMPATIBILIDADE-EDITORES.md](./COMPATIBILIDADE-EDITORES.md). Para monitorar downloads, leia [VERIFICAR-DISTRIBUICAO.md](./VERIFICAR-DISTRIBUICAO.md).
