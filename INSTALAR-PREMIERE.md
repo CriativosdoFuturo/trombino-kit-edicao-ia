@@ -128,4 +128,4 @@ Recupera o endereço latest e esclarece a continuação no Mac. O motor MCP, o i
 
 Corrige quebras de linha do bootstrap Mac para LF, antecipa a verificação de acesso ao Registro no Windows e adiciona --resume para a preparação parcial descrita acima. Mantém motor MCP, dependências fixadas e painel assinado byte a byte. Testes simulados cobriram recuperação, preservação dos backups, arquivos modificados, modelo divergente, instalação em andamento, falta de permissão e instalação concluída. Esses testes não substituem uma instalação real no computador do aluno; não houve nova instalação nativa no Mac nesta revisão. Nenhuma edição de teste é exigida.
 
-Para os demais editores, leia [COMPATIBILIDADE-EDITORES.md](./COMPATIBILIDADE-EDITORES.md). Para monitorar downloads, leia [VERIFICAR-DISTRIBUICAO.md](./VERIFICAR-DISTRIBUICAO.md).
+Para os demais editores, leia [COMPATIBILIDADE-EDITORES.md](./COMPATIBILIDADE-EDITORES.md).

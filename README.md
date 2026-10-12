@@ -53,6 +53,6 @@ Esta unificação preserva o motor e os scripts da distribuição anterior. Fora
 
 Adaptação didática por Trombino / Criativos do Futuro, baseada no [HyperFrames Student Kit](https://github.com/nateherkai/hyperframes-student-kit). [HyperFrames](https://github.com/heygen-com/hyperframes) e demais referências são projetos de terceiros. Licenças e créditos foram preservados em LICENSE, THIRD_PARTY_NOTICES.md e dentro dos pacotes.
 
-## Compatibilidade e monitoramento
+## Compatibilidade dos editores
 
-Antes de preparar outros editores, leia [as orientações atuais de Resolve, CapCut e Final Cut](./COMPATIBILIDADE-EDITORES.md). Acesse também [os critérios de verificação dos links e arquivos](./VERIFICAR-DISTRIBUICAO.md).
+Antes de preparar outros editores, leia [as orientações atuais de Resolve, CapCut e Final Cut](./COMPATIBILIDADE-EDITORES.md).
