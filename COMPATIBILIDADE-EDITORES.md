@@ -1,6 +1,6 @@
 # Preparação dos editores — orientações do curso
 
-Revisão: 10/10/2026. O fluxo continua sendo enviar o link do editor e o prompt ao agente no computador do aluno. Confira o editor, edição, versão, sistema e integração existente antes de instalar. Preserve o que já funciona. Não prometa equivalência de recursos entre editores. Esta orientação complementa a documentação dos autores; não é uma alteração dos projetos de terceiros.
+Revisão: 13/10/2026. O fluxo continua sendo enviar o link do editor e o prompt ao agente no computador do aluno. Confira o editor, edição, versão, sistema e integração existente antes de instalar. Preserve o que já funciona. Não prometa equivalência de recursos entre editores. Esta orientação complementa a documentação dos autores; não é uma alteração dos projetos de terceiros.
 
 ## Premiere
 
@@ -13,6 +13,10 @@ Projeto: https://github.com/samuelgursky/davinci-resolve-mcp
 Identifique **Studio ou gratuito**, além da versão. O caminho principal da integração usa a API de scripting do **Studio**, conforme o README do autor. A documentação do projeto descreve uma ponte interna para o gratuito até 21.0.x, com relato de medição em 21.0.3.7. Também informa que a edição gratuita 21.1 deixou de listar scripts Python pelo caminho usado; suporte pelo Console não foi confirmado. Portanto, **não ofereça essa ponte como solução comprovada para o gratuito 21.1** e não repita uma preferência que só atende ao Studio.
 
 No Studio, siga os requisitos e o procedimento atual do autor e confirme a conexão local. No gratuito 21.1, explique a incompatibilidade desse caminho e só ofereça alternativa que tenha suporte documentado para a edição/versão encontrada. Não recomende downgrade nem compra automática. A presença do pacote ou seu hash correto não comprova compatibilidade com a edição gratuita. Consulte novamente o README se o autor publicar suporte posterior; não mantenha uma restrição histórica como regra eterna.
+
+**Se as instruções do autor divergirem**, confira a seção [Free edition (in-app bridge)](https://github.com/samuelgursky/davinci-resolve-mcp#free-edition-in-app-bridge) do README e os relatos referentes à edição/versão do aluno. Na revisão de 13/10, o [guia de instalação](https://github.com/samuelgursky/davinci-resolve-mcp/blob/main/docs/install.md) ainda descreve a ponte gratuita de forma geral, sem explicitar o limite de 21.1. Essa descrição genérica não comprova que a ponte funcione nessa versão. Registre a divergência; não repita instalações ou ajustes de Python para tentar resolver uma limitação da edição.
+
+O projeto do autor publicou a [versão 4.10.6](https://github.com/samuelgursky/davinci-resolve-mcp/releases/tag/v4.10.6), com correções no tratamento de nomes contendo caracteres especiais em arquivos de projeto e grupos de cor. O autor validou essas mudanças em testes de arquivos, mas não executou o ciclo completo de montagem, importação e reexportação em um Resolve 21.x Studio nessa revisão. Isso não torna o link indisponível nem certifica todas as operações. Reaproveite a instalação que já funciona; uma versão nova não exige atualização automática. Se uma correção for necessária para o caso do aluno, confira as notas, preserve a configuração e confirme a conexão após atualizar.
 
 ## CapCut Windows
 
